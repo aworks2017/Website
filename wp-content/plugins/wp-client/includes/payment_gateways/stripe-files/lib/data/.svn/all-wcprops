@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/payment_gateways/stripe-files/lib/data
+END
+ca-certificates.crt
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/payment_gateways/stripe-files/lib/data/ca-certificates.crt
+END

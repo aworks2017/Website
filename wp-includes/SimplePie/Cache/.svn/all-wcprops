@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/autonomyworks/!svn/ver/2/trunk/wp-includes/SimplePie/Cache
+END
+Base.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/autonomyworks/!svn/ver/2/trunk/wp-includes/SimplePie/Cache/Base.php
+END
+File.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/autonomyworks/!svn/ver/2/trunk/wp-includes/SimplePie/Cache/File.php
+END
+Memcache.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/autonomyworks/!svn/ver/2/trunk/wp-includes/SimplePie/Cache/Memcache.php
+END
+DB.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/autonomyworks/!svn/ver/2/trunk/wp-includes/SimplePie/Cache/DB.php
+END
+MySQL.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/autonomyworks/!svn/ver/2/trunk/wp-includes/SimplePie/Cache/MySQL.php
+END

@@ -1,0 +1,383 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/autonomyworks/!svn/ver/458/trunk/wp-content/plugins/wp-client/includes/admin
+END
+settings_business_info.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_business_info.php
+END
+templates_shortcodes.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/templates_shortcodes.php
+END
+clients_approve.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/clients_approve.php
+END
+file_tags.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/file_tags.php
+END
+dashboard_dashboard.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/dashboard_dashboard.php
+END
+clients.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/clients.php
+END
+templates_hub_page_simple.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/templates_hub_page_simple.php
+END
+settings_clients_staff.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_clients_staff.php
+END
+settings_limit_ips.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_limit_ips.php
+END
+admins.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/admins.php
+END
+settings_custom_titles.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_custom_titles.php
+END
+clients_staff_approve.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/clients_staff_approve.php
+END
+customize.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/customize.php
+END
+clients_staff.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/clients_staff.php
+END
+dashboard.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/dashboard.php
+END
+addclient.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/autonomyworks/!svn/ver/458/trunk/wp-content/plugins/wp-client/includes/admin/addclient.php
+END
+templates_hub_page.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/templates_hub_page.php
+END
+clients_staff_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/clients_staff_edit.php
+END
+admin_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/admin_edit.php
+END
+managers.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/managers.php
+END
+settings_general.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_general.php
+END
+templates.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/templates.php
+END
+settings_payment_gateways.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_payment_gateways.php
+END
+dashboard_managers.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/dashboard_managers.php
+END
+settings_custom_style.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_custom_style.php
+END
+permissions.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/permissions.php
+END
+settings_email_sending.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_email_sending.php
+END
+manager_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/manager_edit.php
+END
+payments_history.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/payments_history.php
+END
+templates_hub_page_ez.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/templates_hub_page_ez.php
+END
+templates_emails.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/templates_emails.php
+END
+files.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/files.php
+END
+messages_chain.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/messages_chain.php
+END
+settings_file_sharing.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_file_sharing.php
+END
+portal_pages.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/portal_pages.php
+END
+settings_convert_users.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_convert_users.php
+END
+clients_custom_fields.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/clients_custom_fields.php
+END
+settings_custom_login.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_custom_login.php
+END
+addclientpage.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/autonomyworks/!svn/ver/457/trunk/wp-content/plugins/wp-client/includes/admin/addclientpage.php
+END
+files_cat_old.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/files_cat_old.php
+END
+files_cat.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/files_cat.php
+END
+files_download_log.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/files_download_log.php
+END
+settings_about.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_about.php
+END
+settings_import_export.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_import_export.php
+END
+hub_pages.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/hub_pages.php
+END
+dashboard_system_status.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/dashboard_system_status.php
+END
+extensions.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/extensions.php
+END
+settings.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings.php
+END
+clients_convert.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/clients_convert.php
+END
+clients_archive.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/clients_archive.php
+END
+settings_login_alerts.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_login_alerts.php
+END
+clientspage_categories.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/clientspage_categories.php
+END
+clients_custom_field_edit.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/clients_custom_field_edit.php
+END
+messages.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/messages.php
+END
+settings_skins.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_skins.php
+END
+settings_capabilities.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_capabilities.php
+END
+templates_portal_page.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/templates_portal_page.php
+END
+templates_hub_page_advanced.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/templates_hub_page_advanced.php
+END
+templates_hub_preset.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/templates_hub_preset.php
+END
+groups.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/groups.php
+END
+settings_pages.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_pages.php
+END
+settings_login_logout.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/settings_login_logout.php
+END
+editclient.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/admin/editclient.php
+END

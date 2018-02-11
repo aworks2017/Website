@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/payment_gateways
+END
+class.authorizenet-aim.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/payment_gateways/class.authorizenet-aim.php
+END
+class.stripe.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/payment_gateways/class.stripe.php
+END
+class.authorizenet-sim.php
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/payment_gateways/class.authorizenet-sim.php
+END
+class.paypal-express.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/payment_gateways/class.paypal-express.php
+END

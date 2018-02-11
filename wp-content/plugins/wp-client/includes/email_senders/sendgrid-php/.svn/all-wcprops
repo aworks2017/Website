@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/email_senders/sendgrid-php
+END
+SendGrid.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/email_senders/sendgrid-php/SendGrid.php
+END
+SendGrid_loader.php
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/autonomyworks/!svn/ver/169/trunk/wp-content/plugins/wp-client/includes/email_senders/sendgrid-php/SendGrid_loader.php
+END
