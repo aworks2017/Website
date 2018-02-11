@@ -1,91 +1,0 @@
-10
-
-dir
-800
-https://imenus.svn.beanstalkapp.com/autonomyworks/trunk/wp-includes/js/tinymce/plugins
-https://imenus.svn.beanstalkapp.com/autonomyworks
-
-
-
-2015-10-17T03:12:30.275090Z
-2
-jbadrov
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2f5d300a-12b5-43ce-915b-723bbad5b47f
-
-wpview
-dir
-
-image
-dir
-
-directionality
-dir
-
-textcolor
-dir
-
-wordpress
-dir
-
-wpdialogs
-dir
-
-wptextpattern
-dir
-
-lists
-dir
-
-compat3x
-dir
-
-wpeditimage
-dir
-
-wpautoresize
-dir
-
-fullscreen
-dir
-
-wplink
-dir
-
-wpgallery
-dir
-
-tabfocus
-dir
-
-hr
-dir
-
-wpemoji
-dir
-
-charmap
-dir
-
-colorpicker
-dir
-
-paste
-dir
-
-media
-dir
-
