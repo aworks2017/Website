@@ -1,0 +1,9 @@
+<div id=\"autonomyworks-home\"><section class=\"col-md-12\">
+<div id=\"task-bloc\" class=\"col-md-6\"></div>
+<div id=\"notes-bloc\" class=\"col-md-6\"></div>
+</section>
+<div id=\"action-bloc\" class=\"col-md-12 text-center\">[start_task_button]</div>
+<section id=\"stop-bloc\" class=\"col-md-12\">
+<div class=\"col-md-6 left\"></div>
+<div class=\"col-md-6 right\"></div>
+</section></div>
