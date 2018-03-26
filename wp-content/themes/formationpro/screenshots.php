@@ -11,7 +11,7 @@ add_action( 'wp_enqueue_scripts', function(){
 });
  wp_enqueue_script( 'script', get_template_directory_uri() . '/js/dropzone.min.js');
  wp_enqueue_script( 'script', get_template_directory_uri() . '/js/jquery.blockUI.js');
- get_header('screenshot'); 
+ get_header('screenshot');
  ?>
  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
@@ -24,8 +24,8 @@ add_action( 'wp_enqueue_scripts', function(){
 		<form name="screenshotForm"  id="screenshotForm"  action="<?php echo admin_url('screenshots_form.php');?>" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="no_attachments_flag" id="no_attachments_flag" value="1">
 		<table border="0" width="500" align="center" class="table">
-		<p>For all screenshot requests for your selected advertiser (including screenshots at the launch of a campaign, creative swaps, and new flights), 
-		please fill out the information below. Please allow AutonomyWorks 24-48 hours to pull the screenshots upon receiving this email.</p>
+		<p>For all screenshot requests for your selected advertiser (including screenshots at the launch of a campaign, creative swaps, and new flights),
+		please fill out the information below. Please allow AutonomyWorks 24-481 hours to pull the screenshots upon receiving this email.</p>
 		<tr width="80%">
 			<td width="30%"> Requester email address:<span style="color: red;">*</span></td>
 			<td width="50%"><input type="text" class="required_fields" name="requester_email" id="requester_email">
@@ -88,13 +88,13 @@ add_action( 'wp_enqueue_scripts', function(){
 				   <div class="dz-default dz-message">
 				    Drag files here to upload, or click to browse for files.
 				   </div>
-			</div>		
+			</div>
 		<div>
 		<br>
 		<input type="submit" name="screenshot_submit" id="screenshot_submit" value="Submit" class="btnRegister" onclick=" return checkFileUploaded();">
 		<span id="span_file_size_error"  style="color: red; display:none">File size is greater than 50MB.</span>
 		</div>
-		</form>	
+		</form>
 	</div>
 		<div class="request-from-area">
 				<div class="user-info-area">
@@ -125,10 +125,10 @@ tinymce.init({
   ],
   toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
   content_css: '//www.tinymce.com/css/codepen.min.css'
-}); 
+});
 	function isEmpty(str) {
 		return (!str || 0 === str.length);
-	} 
+	}
 	function checkFileUploaded(){
 		var inputs_val = $('#screenshotForm .required_fields');
 		var check = true;
@@ -151,7 +151,7 @@ tinymce.init({
 				 $("#span_file_optional").show();
 				 return false;
 				}
-		}			
+		}
 		return check;
 	}
 	var element = "#dZUpload";
@@ -168,9 +168,9 @@ tinymce.init({
         success: function (file,response) {
 		   if((response)){
 			   url_redirect = response.replace(/\s/g, '');
-			   window.location.href= url_redirect;					   
+			   window.location.href= url_redirect;
 		  }
-  },		
+  },
 		init: function() {
 			dzClosure = this;
 			document.getElementById("screenshot_submit").addEventListener("click", function(e) {
@@ -181,8 +181,8 @@ tinymce.init({
 						e.preventDefault();
 						e.stopPropagation();
 						dzClosure.processQueue();
-					}			
-				}			
+					}
+				}
 			});
 			this.on("complete", function(file) {
             if (file.size > 50*1024*1024) {
@@ -190,15 +190,15 @@ tinymce.init({
                 $("#span_file_size_error").show();
                 return false;
             }else{
-                $("#span_file_size_error").hide();				
+                $("#span_file_size_error").hide();
 			}
-			});					
+			});
 			//send all the form data along with the files:
 			this.on("sendingmultiple", function(data, xhr, formData) {
 				if($('#file_optional').val() !=''){
 					$('#file_optional')[0].files[0].name = "optional_"+$('#file_optional')[0].files[0];
 						var optional_file = $('#file_optional')[0].files[0];
-						data.push(optional_file);		
+						data.push(optional_file);
 				}
 				//formData.append($('form').serializeArray());
 				var inputs = $('#screenshotForm :input');
@@ -208,8 +208,8 @@ tinymce.init({
 					var val = $('[name="'+name+'"]').val();
 					formData.append(name, val);
 				});
-					formData.append("special_instruction", tinyMCE.get('special_instruction').getContent());			
-			});			
+					formData.append("special_instruction", tinyMCE.get('special_instruction').getContent());
+			});
 		}
      });
  </script>
