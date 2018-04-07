@@ -37,9 +37,10 @@ add_action( 'wp_enqueue_scripts', function(){
 			<td><input type="text" name="additional_screenshot" id="additional_screenshot" style="margin-top: 5px;"></td>
 		</tr>
 		<tr>
-			<td>Our standard turnaround time is two business days. If you have an urgent request, please list the due date and time here: <span style="color: red;">*</span>. AutonomyWorks will confirm if we can meet this deadline.</td>
+			<td>Our standard turnaround time is two business days. If you have an urgent request, please list the due date and time here: <span style="color: red;">*</span></td>
 			<td><input type="date" name="screenshot_due_date" class="required_fields" id="screenshot_due_date" style="margin-top: 5px;">
-			<span class="hint">Screenshots required on multiple dates should be submitted as individual requests.</span><span id="span_screenshot_due_date"  style="color: red; display:none">Screenshot Due Date is required</span></td>
+			<span class="hint">Screenshots required on multiple dates should be submitted as individual requests.</span><span id="span_screenshot_due_date"  style="color: red; display:none">Screenshot Due Date is required</span>
+			. AutonomyWorks will confirm if we can meet this deadline.</td>
 		</tr>
 		<tr>
 			<td>Advertiser:<span style="color: red;">*</span></td>
@@ -88,7 +89,6 @@ add_action( 'wp_enqueue_scripts', function(){
 				   <div class="dz-default dz-message">
 				    Drag files here to upload, or click to browse for files.
 				   </div>
-			</div>		
 			</div>
 		<div>
 		<br>
