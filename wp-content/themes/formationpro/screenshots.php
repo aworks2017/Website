@@ -37,9 +37,9 @@ add_action( 'wp_enqueue_scripts', function(){
 			<td><input type="text" name="additional_screenshot" id="additional_screenshot" style="margin-top: 5px;"></td>
 		</tr>
 		<tr>
-			<td>Screenshot Due Date: <span style="color: red;">*</span></td>
-			<td><input type="date" name="screenshot_due_date" class="required_fields" id="screenshot_due_date" style="margin-top: 5px;">
-			<span class="hint">Screenshots required on multiple dates should be submitted as individual requests.</span><span id="span_screenshot_due_date"  style="color: red; display:none">Screenshot Due Date is required</span></td>
+			<td>Our standard turnaround time is two business days. If you have an urgent request, please list the due date and time here: <span style="color: red;">*</span></td>
+			<td><input type="text" name="screenshot_due_date" class="required_fields" id="screenshot_due_date" style="margin-top: 5px;">
+			 AutonomyWorks will confirm if we can meet this deadline</td>
 		</tr>
 		<tr>
 			<td>Advertiser:<span style="color: red;">*</span></td>
@@ -52,22 +52,20 @@ add_action( 'wp_enqueue_scripts', function(){
 			<span id="span_campaign_id"  style="color: red; display:none">Campaign ID is required</span></td>
 		</tr>
 		<tr>
-			<td>Launch Date of Campaign:<span  style="color: red;">*</span></td>
-			<td><input type="text"  class="required_fields" name="last_date_campaign" id="last_date_campaign" style="margin-top: 5px;">
-			<span id="span_last_date_campaign"  style="color: red; display:none">Launch Date of Campaign is required</span></td>
+			<td style="padding: 10px 0;">Network: </td>
+			<td><input type="radio" name="network" value="Basis DSP" checked> Basis DSP  <input type="radio" name="network" value="Brand Exchange" style="margin-left: 15px;"> Brand Exchange  <input type="radio" name="network" value="Other" style="margin-left: 15px;"> Other [Please list site names in special instructions box]</td>
 		</tr>
 		<tr>
-			<td>End Date of Campaign:</td>
-			<td><input type="text" name="end_date_of_campaign" id="end_date_of_campaign" style="margin-top: 5px;">
-			</td>
-		</tr>
-		<tr>
-			<td>Sites/Networks (please specify any content or geotargeting):</td>
-			<td><input type="text" name="site_networks" id="site_networks" style="margin-top: 5px;"></td>
-		</tr>
-		<tr>
-			<td>Number of screenshots/sizes per site:</td>
+			<td>Total number of screenshots:</td>
 			<td><input type="text" name="no_of_screenshot" id="no_of_screenshot" style="margin-top: 5px;"></td>
+		</tr>
+		<tr>
+			<td style="padding: 10px 0;">Geo-targeting:</td>
+			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes [Please include DMAs in special instructions box] </td>
+		</tr>
+		<tr>
+			<td style="padding: 10px 0;">Content targeting:</td>
+			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes [Please include dates or article content in special instructions box] </td>
 		</tr>
 		<tr>
 			<td>If there is a special PowerPoint template (different from the Centro template), please attach:</td>
@@ -75,7 +73,7 @@ add_action( 'wp_enqueue_scripts', function(){
 			<span id="span_file_optional"  style="color: red; display:none">File size is greater than 50MB.</span></td>
 		</tr>
 		<tr>
-			<td>Any special instructions? (Please include any specific brands or placements you would like screenshots for):</td>
+			<td>Please include any special instructions for this request (e.g. number of creative versions, unique site list, etc.)</td>
 			<td><textarea name="special_instruction" id="special_instruction" style="margin: 0px;width: 300px;height: 42px;"></textarea>
 			</td>
 		</tr>

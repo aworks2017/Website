@@ -29,9 +29,10 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$template_html = str_replace('$screenshot_due_date',$_POST['screenshot_due_date'], $template_html);
 	$template_html = str_replace('$advertiser', $_POST['advertiser'], $template_html);
 	$template_html = str_replace('$campaign_id', $_POST['campaign_id'], $template_html);
-	$template_html = str_replace('$last_date_campaign',$_POST['last_date_campaign'], $template_html);
-	$template_html = str_replace('$site_networks', $_POST['site_networks'], $template_html);		
+	$template_html = str_replace('$network', $_POST['network'], $template_html);		
 	$template_html = str_replace('$no_of_screenshot',$_POST['no_of_screenshot'], $template_html);
+	$template_html = str_replace('$geo_target', $_POST['geo_target'], $template_html);
+	$template_html = str_replace('$content_target', $_POST['content_target'], $template_html);
 	$template_html = str_replace('$special_instruction', $_POST['special_instruction'], $template_html);
     
 	$attachments = array();
