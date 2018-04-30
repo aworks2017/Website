@@ -16,10 +16,10 @@ $string='
 		<li><b>Screenshot Due Date:&nbsp;</b> $screenshot_due_date </li> 
 		<li><b>Advertiser:&nbsp;</b> $advertiser </li>
 		<li><b>Campaign ID(s):&nbsp;</b> $campaign_id </li>
-		<li><b>Launch Date of Campaign:&nbsp;</b> $last_date_campaign </li>
-		<li><b>End Date of Campaign:&nbsp;</b> $end_date_of_campaign </li>
-		<li><b>Sites/Networks (please specify any content or geotargeting):&nbsp;</b> $site_networks </li> 
-		<li><b>Number of screenshots/sizes per site:&nbsp;</b> $no_of_screenshot </li>
+		<li><b>Networks:&nbsp;</b> $network </li> 
+		<li><b>Total number of screenshots:&nbsp;</b> $no_of_screenshot </li>
+		<li><b>Geo-targeting:&nbsp;</b> $geo_target </li>
+		<li><b>Content targeting:&nbsp;</b> $content_target </li>
 		<li><b>Any special instructions:&nbsp;</b> $special_instruction </li>
 	</ul>
 </p>';
