@@ -99,8 +99,8 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$mail->isHTML(true);
 	$mail->Body = $template_html;
 	$mail->AltBody = $template_html;	
-	foreach($email_config['mediaqUserEmail'] as $email){
-		$mail->addAddress($email, $email_config['userName']);	
+	foreach($email_config['mediaiqUserEmail'] as $email){
+		$mail->addAddress($email, $email_config['mediaiqUserName']);	
 	}
 	if($mail->send()){
 		$redirect_url = '/forms/clients/mediaiq-screenshots-submission?form_submission_id='.$form_submission_id;
