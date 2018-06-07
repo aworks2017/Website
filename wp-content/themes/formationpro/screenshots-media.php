@@ -98,7 +98,7 @@ add_action( 'wp_enqueue_scripts', function(){
 		<div class="request-from-area">
 				<div class="user-info-area">
 					<div class="support-message"><br /><br />
-						<p>&nbsp;<br/>For support contact <a href="mailto:centro@emailautonomy.com">centro@emailautonomy.com</a></p><br /><br />
+						<p>&nbsp;<br/>For support contact <a href="mailto:mediaiq@emailautonomy.com">mediaiq@emailautonomy.com</a></p><br /><br />
 
 					</div>
 				</div>
