@@ -6,6 +6,7 @@ foreach($squantial_number as $file_path){
 	deleteOldFiles('wp-admin/'.$file_path->files_path);
 }
 echo "All screen shot submitted files before seven days were successfully  deleted.";
+
 function deleteOldFiles($targetfolder) {
 	$hours =168;
 	if (is_dir($targetfolder)){
@@ -22,6 +23,6 @@ function deleteOldFiles($targetfolder) {
 			closedir($dht);
 		  }
 		   rmdir($targetfolder);
-		}				
-	}	
+		}
+	}
 }
