@@ -5,6 +5,7 @@ $squantial_number = $wpdb->get_results("SELECT files_path FROM ".$wpdb->prefix."
 foreach($squantial_number as $file_path){
 	deleteOldFiles('wp-admin/'.$file_path->files_path);
 }
+
 echo "All screen shot submitted files before seven days were successfully  deleted.";
 
 function deleteOldFiles($targetfolder) {
