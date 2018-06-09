@@ -1,6 +1,7 @@
 <?php
 require_once('wp-load.php');
 global $wpdb;
+
 $squantial_number = $wpdb->get_results("SELECT files_path FROM ".$wpdb->prefix."screenshot_form_submission");
 foreach($squantial_number as $file_path){
 	deleteOldFiles('wp-admin/'.$file_path->files_path);
