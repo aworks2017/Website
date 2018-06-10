@@ -13,7 +13,7 @@ if(empty($squantial_number)){
 }
 $form_submission_id ='ID'. $squantial_number;
 //$form_submission_id ='ID'. substr(number_format(time() * rand(),0,'',''),0,6);
-$targetfolder = "screenshot_formsubmission/centro/".$form_submission_id.'/';
+$targetfolder = "screenshot_formsubmission/mediaiq/".$form_submission_id.'/';
 ini_set('display_errors', 0);
 error_reporting(0);
 ini_set('post_max_size', '1000M');
@@ -29,12 +29,12 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$template_html = str_replace('$screenshot_due_date',$_POST['screenshot_due_date'], $template_html);
 	$template_html = str_replace('$advertiser', $_POST['advertiser'], $template_html);
 	$template_html = str_replace('$campaign_id', $_POST['campaign_id'], $template_html);
-	$template_html = str_replace('$network', $_POST['network'], $template_html);		
+	$template_html = str_replace('$network', $_POST['network'], $template_html);
 	$template_html = str_replace('$no_of_screenshot',$_POST['no_of_screenshot'], $template_html);
 	$template_html = str_replace('$geo_target', $_POST['geo_target'], $template_html);
 	$template_html = str_replace('$content_target', $_POST['content_target'], $template_html);
 	$template_html = str_replace('$special_instruction', $_POST['special_instruction'], $template_html);
-    
+
 	$attachments = array();
 	$optional_file='';
 	if(isset($_FILES[ 'file' ]) && !empty($_FILES[ 'file' ])){
@@ -53,14 +53,14 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 				}
 				if($file != $optional_name){
 					$attachments []= $targetfolder.$file;
-				}else{				
+				}else{
 					$optional_file = $file;
 				}
 			}
 			closedir($dht);
 		  }
 		}
-		create_zip($attachments, $targetfolder.'centro-form_'.$form_submission_id.'.zip');
+		create_zip($attachments, $targetfolder.'mediaiq-form_'.$form_submission_id.'.zip');
 	}elseif(isset($_FILES['file_optional']) && !empty($_FILES['file_optional'])){
 		if (!file_exists($targetfolder)) {
 			mkdir($targetfolder, 0777, true);
@@ -68,45 +68,45 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 		move_uploaded_file($_FILES['file_optional']['tmp_name'], $targetfolder.basename($_FILES['file_optional']['name']));
 		$optional_file = $_FILES['file_optional']['name'];
 	}
-	 
+
 	$mail = new PHPMailer;
-	//Enable SMTP debugging. 
+	//Enable SMTP debugging.
 	$mail->SMTPDebug = false;
-	$mail->do_debug = 0;                             
+	$mail->do_debug = 0;
 	//Set PHPMailer to use SMTP.
-	$mail->isSMTP();            
-	//Set SMTP host name                          
+	$mail->isSMTP();
+	//Set SMTP host name
 	$mail->Host = $email_config['host'];
 	//Set this to true if SMTP host requires authentication to send email
-	$mail->SMTPAuth = true;                          
-	//Provide username and password     
-	$mail->Username = $email_config['user_name'];                 
-	$mail->Password = $email_config['password'];                           
+	$mail->SMTPAuth = true;
+	//Provide username and password
+	$mail->Username = $email_config['user_name'];
+	$mail->Password = $email_config['password'];
 	//If SMTP requires TLS encryption then set it
-	$mail->SMTPSecure = $email_config['smtp'];                           
-	//Set TCP port to connect to 
-	$mail->Port = $email_config['port'];                                   
+	$mail->SMTPSecure = $email_config['smtp'];
+	//Set TCP port to connect to
+	$mail->Port = $email_config['port'];
 
 	$mail->From = $email_config['from_email'];
 	$mail->FromName = $email_config['from_name'];
 	$mail->AddCC($_POST[ 'requester_email' ],'');
 	if(isset($_FILES['file']) && !empty($_FILES['file'])){
-		$mail->addAttachment($targetfolder.'centro-form_'.$form_submission_id.'.zip', 'centro-form_'.$form_submission_id.'.zip');
+		$mail->addAttachment($targetfolder.'mediaiq-form_'.$form_submission_id.'.zip', 'mediaiq-form_'.$form_submission_id.'.zip');
 	}elseif(!empty($optional_file)){
 		$mail->addAttachment($targetfolder.$optional_file, $optional_file);
 	}
-	$mail->Subject = "Centro form data ".$form_submission_id."";
+	$mail->Subject = "MediaIQ data ".$form_submission_id."";
 	$mail->isHTML(true);
 	$mail->Body = $template_html;
-	$mail->AltBody = $template_html;	
-	foreach($email_config['userEmail'] as $email){
-		$mail->addAddress($email, $email_config['userName']);	
+	$mail->AltBody = $template_html;
+	foreach($email_config['mediaiqUserEmail'] as $email){
+		$mail->addAddress($email, $email_config['mediaiqUserName']);
 	}
 	if($mail->send()){
-		$redirect_url = '/forms/clients/centro-screenshots-submission?form_submission_id='.$form_submission_id;
-	} 
+		$redirect_url = '/forms/clients/mediaiq-screenshots-submission?form_submission_id='.$form_submission_id;
+	}
 	else{
-		$redirect_url =  '/forms/clients/centro-screenshots-submission?not_sent=1';
+		$redirect_url =  '/forms/clients/mediaiq-screenshots-submission?not_sent=1';
 	}
 	if(isset($_REQUEST['no_attachments_flag']) && $_REQUEST['no_attachments_flag']==1){
 		ob_clean();
@@ -142,10 +142,10 @@ function create_zip($files = array(),$destination = '',$overwrite = false) {
 			$new_filename = substr($file,strrpos($file,'/') + 1);
 			$zip->addFile($file,$new_filename);
 		}
-		
+
 		//close the zip -- done!
 		$zip->close();
-		
+
 		//check to make sure the file exists
 		return file_exists($destination);
 	}

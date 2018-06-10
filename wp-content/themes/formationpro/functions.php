@@ -1211,6 +1211,32 @@ function update_count() {
 	wp_die();
 }
 
+add_action( 'init', 'create_page' );
+
+function create_page() {
+    if(get_page_by_title('MediaIQ  Screenshots') == NULL ){
+	    $page_id = wp_insert_post(array(
+				'post_title' => 'MediaIQ  Screenshots',
+				'post_type' =>'page',		
+				'post_name' => 'mediaiq-screenshots',
+				'post_status' => 'publish',
+				'post_excerpt' => '',
+				'post_parent' => '1867'	
+			));
+		add_post_meta( $page_id, '_wp_page_template', 'screenshots-media.php' );
+	} 
+	if(get_page_by_title('MediaIQ  Screenshots Submissions') == NULL ){
+	    $page_id = wp_insert_post(array(
+				'post_title' => 'MediaIQ  Screenshots Submissions',
+				'post_type' =>'page',		
+				'post_name' => 'mediaiq-screenshots-submission',
+				'post_status' => 'publish',
+				'post_excerpt' => '',
+				'post_parent' => '1867'	
+			));
+		add_post_meta( $page_id, '_wp_page_template', 'mediaiq-screenshots-submission.php' );
+	}
+}
 /*add_action( 'init', 'change_pass' );
 function change_pass(){
 	if(isset($_POST['pass'])){

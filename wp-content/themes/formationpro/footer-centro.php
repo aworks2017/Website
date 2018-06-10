@@ -1,5 +1,5 @@
     <?php /*<div style="float: right;margin: 15px 80px;">
-        <a href="http://www.autonomy-works.com">
+        <a href="http://www.autonomy.works">
             <img src="/wp-content/themes/formationpro/images/img.png" width="68" height="33" alt="AutonomyWorks">
         </a>
     </div>
@@ -8,7 +8,7 @@
 <!-- #main .site-main -->
 
 
-<!-- #colophon .site-footer --> 
+<!-- #colophon .site-footer -->
 
 <a href="#top" id="smoothup"></a>
 </div>
