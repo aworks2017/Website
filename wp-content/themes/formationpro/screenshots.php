@@ -25,7 +25,7 @@ add_action( 'wp_enqueue_scripts', function(){
 		<input type="hidden" name="no_attachments_flag" id="no_attachments_flag" value="1">
 		<table border="0" width="500" align="center" class="table">
 		<p>For all screenshot requests for your selected advertiser (including screenshots at the launch of a campaign, creative swaps, and new flights),
-		please fill out the information below. Please allow AutonomyWorks 24-48 hours to pull the screenshots upon receiving this email.</p>
+		please fill out the information below.</p>
 		<tr width="80%">
 			<td width="30%"> Requester email address:<span style="color: red;">*</span></td>
 			<td width="50%"><input type="text" class="required_fields" name="requester_email" id="requester_email">
@@ -37,9 +37,9 @@ add_action( 'wp_enqueue_scripts', function(){
 			<td><input type="text" name="additional_screenshot" id="additional_screenshot" style="margin-top: 5px;"></td>
 		</tr>
 		<tr>
-			<td>Our standard turnaround time is two business days. If you have an urgent request, please list the due date and time here: <span style="color: red;">*</span></td>
+			<td>Our standard turnaround time is two business days. If you have an urgent request, please list the due date and time here and AutonomyWorks will confirm if we can meet this deadline: </td>
 			<td><input type="text" name="screenshot_due_date" class="required_fields" id="screenshot_due_date" style="margin-top: 5px;">
-			 AutonomyWorks will confirm if we can meet this deadline</td>
+			 </td>
 		</tr>
 		<tr>
 			<td>Advertiser:<span style="color: red;">*</span></td>
@@ -56,7 +56,7 @@ add_action( 'wp_enqueue_scripts', function(){
 			<td><input type="radio" name="network" value="Basis DSP" checked> Basis DSP  <input type="radio" name="network" value="Brand Exchange" style="margin-left: 15px;"> Brand Exchange  <input type="radio" name="network" value="Other" style="margin-left: 15px;"> Other [Please list site names in special instructions box]</td>
 		</tr>
 		<tr>
-			<td>Total number of screenshots:</td>
+			<td>Total number of screenshots (if blank, we will deliver 1 screenshot per creative size):</td>
 			<td><input type="text" name="no_of_screenshot" id="no_of_screenshot" style="margin-top: 5px;"></td>
 		</tr>
 		<tr>
