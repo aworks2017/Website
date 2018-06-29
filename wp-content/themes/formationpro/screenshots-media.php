@@ -58,14 +58,6 @@ add_action( 'wp_enqueue_scripts', function(){
 				<textarea name="sites_publishers"  id="sites_publishers" cols="70" rows="6" style="width: auto;"></textarea>
 			</td>
 		</tr>
-		<!-- <tr>
-			<td style="padding: 10px 0;">Network: </td>
-			<td><input type="radio" name="network" value="Basis DSP" checked> Basis DSP  <input type="radio" name="network" value="Brand Exchange" style="margin-left: 15px;"> Brand Exchange  <input type="radio" name="network" value="Other" style="margin-left: 15px;"> Other [Please list site names in special instructions box]</td>
-		</tr> 
-		<tr>
-			<td>Total number of screenshots:</td>
-			<td><input type="text" name="no_of_screenshot" id="no_of_screenshot" style="margin-top: 5px;"></td>
-		</tr>-->
 		<tr>
 			<td style="padding: 10px 0;">Geo-targeting:</td>
 			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 42px;" name="geo_target_yes" id="showOnYes"></textarea> </td>
@@ -74,11 +66,6 @@ add_action( 'wp_enqueue_scripts', function(){
 			<td style="padding: 10px 0;">Content targeting:</td>
 			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 42px;" name="content_target_yes" id="showOnYesContent"></textarea> </td>
 		</tr>
-		<!-- <tr>
-			<td>If there is a special PowerPoint template (different from the Centro template), please attach:</td>
-			<td><input type="file" name="file_optional" id="file_optional" style="margin-top: 5px;">
-			<span id="span_file_optional"  style="color: red; display:none">File size is greater than 50MB.</span></td>
-		</tr> -->
 		<tr>
 			<td>Please include any special instructions for this request (e.g. number of creative versions, unique site list, etc.)</td>
 			<td><textarea name="special_instruction" id="special_instruction" style="margin: 0px;width: 300px;height: 42px;"></textarea>
@@ -149,14 +136,6 @@ tinymce.init({
 						$("#span_"+name_field).hide();
 					}
 				});
-		if($('#file_optional').val() !=''){
-			if($('#file_optional')[0].files[0].size <= 50*1024*1024){
-				 $("#span_file_optional").hide();
-			 }else{
-				 $("#span_file_optional").show();
-				 return false;
-				}
-		}
 		return check;
 	}
 	var element = "#dZUpload";
@@ -200,11 +179,6 @@ tinymce.init({
 			});
 			//send all the form data along with the files:
 			this.on("sendingmultiple", function(data, xhr, formData) {
-				if($('#file_optional').val() !=''){
-					$('#file_optional')[0].files[0].name = "optional_"+$('#file_optional')[0].files[0];
-						var optional_file = $('#file_optional')[0].files[0];
-						data.push(optional_file);
-				}
 				//formData.append($('form').serializeArray());
 				var inputs = $('#screenshotForm :input');
 				var values = {};

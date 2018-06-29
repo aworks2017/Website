@@ -16,6 +16,7 @@ $string='
 		<li><b>Screenshot Due Date:&nbsp;</b> $screenshot_due_date </li> 
 		<li><b>Advertiser:&nbsp;</b> $advertiser </li>
 		<li><b>Creative ID(s):&nbsp;</b> $campaign_id </li>
+		<li><b>Sites/Publishers:&nbsp;</b> $site_publishers </li>
 		<li><b>Geo-targeting:&nbsp;</b> $geo_target </li>
 		<li><b>Content targeting:&nbsp;</b> $content_target </li>
 		<li><b>Any special instructions:&nbsp;</b> $special_instruction </li>
