@@ -61,11 +61,11 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Geo-targeting:</td>
-			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes <textarea  style="margin: 0px;width: 300px;height: 42px;" name="geo_target_yes" id="geo_target_yes"></textarea> </td>
+			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 42px;" name="geo_target_yes" id="geo_target_yes"></textarea> </td>
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Content targeting:</td>
-			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes <textarea  style="margin: 0px;width: 300px;height: 42px;" name="content_target_yes" id="content_target_yes"></textarea> </td>
+			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 42px;" name="content_target_yes" id="content_target_yes"></textarea> </td>
 		</tr>
 		<tr>
 			<td>If there is a special PowerPoint template (different from the Centro template), please attach:</td>
