@@ -26,7 +26,7 @@ add_action( 'wp_enqueue_scripts', function(){
 		<input type="hidden" name="mediaiq" value="1">
 		<table border="0" width="500" align="center" class="table">
 		<p>For all screenshot requests for your selected advertiser (including screenshots at the launch of a campaign, creative swaps, and new flights),
-		please fill out the information below. Please allow AutonomyWorks 24-48 hours to pull the screenshots upon receiving this email.</p>
+		please fill out the information below.</p>
 		<tr width="80%">
 			<td width="30%"> Requester email address:<span style="color: red;">*</span></td>
 			<td width="50%"><input type="text" class="required_fields" name="requester_email" id="requester_email">
@@ -38,7 +38,7 @@ add_action( 'wp_enqueue_scripts', function(){
 			<td><input type="text" name="additional_screenshot" id="additional_screenshot" style="margin-top: 5px;"></td>
 		</tr>
 		<tr>
-			<td>Our standard turnaround time is two business days. If you have an urgent request, please list the due date and time here: <span style="color: red;">*</span></td>
+			<td>Our standard turnaround time is by EOD the next business day. If you have an urgent request, please list the due date and time here: <span style="color: red;"></span></td>
 			<td><input type="text" name="screenshot_due_date" class="required_fields" id="screenshot_due_date" style="margin-top: 5px;">
 			 AutonomyWorks will confirm if we can meet this deadline</td>
 		</tr>
@@ -49,37 +49,43 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td>Creative ID(s):<span  style="color: red;">*</span></td>
-			<td><input type="text" class="required_fields" name="campaign_id"  id="campaign_id" style="margin-top: 5px;" >
+			<td><textarea class="required_fields" name="campaign_id"  id="campaign_id"  cols="70" rows="6" style="width: auto; margin-top: 5px; margin-bottom: 5px;"></textarea>
 			<span id="span_campaign_id"  style="color: red; display:none">Creative ID is required</span></td>
 		</tr>
 		<tr>
+			<td>Sites / Publishers:</td>
+			<td>
+				<textarea name="sites_publishers"  id="sites_publishers" cols="70" rows="6" style="width: auto;"></textarea>
+			</td>
+		</tr>
+		<!-- <tr>
 			<td style="padding: 10px 0;">Network: </td>
 			<td><input type="radio" name="network" value="Basis DSP" checked> Basis DSP  <input type="radio" name="network" value="Brand Exchange" style="margin-left: 15px;"> Brand Exchange  <input type="radio" name="network" value="Other" style="margin-left: 15px;"> Other [Please list site names in special instructions box]</td>
-		</tr>
+		</tr> 
 		<tr>
 			<td>Total number of screenshots:</td>
 			<td><input type="text" name="no_of_screenshot" id="no_of_screenshot" style="margin-top: 5px;"></td>
-		</tr>
+		</tr>-->
 		<tr>
 			<td style="padding: 10px 0;">Geo-targeting:</td>
-			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes [Please include DMAs in special instructions box] </td>
+			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 42px;" name="geo_target_yes" id="showOnYes"></textarea> </td>
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Content targeting:</td>
-			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes [Please include dates or article content in special instructions box] </td>
+			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 42px;" name="content_target_yes" id="showOnYesContent"></textarea> </td>
 		</tr>
-		<tr>
+		<!-- <tr>
 			<td>If there is a special PowerPoint template (different from the Centro template), please attach:</td>
 			<td><input type="file" name="file_optional" id="file_optional" style="margin-top: 5px;">
 			<span id="span_file_optional"  style="color: red; display:none">File size is greater than 50MB.</span></td>
-		</tr>
+		</tr> -->
 		<tr>
 			<td>Please include any special instructions for this request (e.g. number of creative versions, unique site list, etc.)</td>
 			<td><textarea name="special_instruction" id="special_instruction" style="margin: 0px;width: 300px;height: 42px;"></textarea>
 			</td>
 		</tr>
 		</table>
-		Creative files (please attach):
+		Attach additional files here (max 25 MB):
 			<div id="dZUpload" class="dropzone">
 				 <div class="fallback">
 				  <input name="file[]" type="file" multiple />
@@ -211,5 +217,12 @@ tinymce.init({
 			});
 		}
      });
+	
+	$(window).load(function(){
+		tinymce.remove('#showOnYes');
+		tinymce.remove('#showOnYesContent');
+		tinymce.remove('#sites_publishers');
+		tinymce.remove('#campaign_id');
+	});
  </script>
 <?php get_footer('centro'); ?>
