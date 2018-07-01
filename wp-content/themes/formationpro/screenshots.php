@@ -53,7 +53,7 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Network: </td>
-			<td><input type="radio" name="network" value="Basis DSP" checked> Basis DSP  <input type="radio" name="network" value="Brand Exchange" style="margin-left: 15px;"> Brand Exchange  <input type="radio" name="network" value="Other" style="margin-left: 15px;"> Other [Please list site names in special instructions box]</td>
+			<td><input type="radio" name="network" value="Basis DSP" checked> Basis DSP  <input type="radio" name="network" value="Brand Exchange" style="margin-left: 15px;"> Brand Exchange  <input type="radio" name="network" value="Other" style="margin-left: 15px;"> Other <textarea  style="margin: 0px;width: 300px;height: 42px;" name="network_yes" id="network_yes"></textarea></td>
 		</tr>
 		<tr>
 			<td>Total number of screenshots (if blank, we will deliver 1 screenshot per creative size):</td>
@@ -61,11 +61,11 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Geo-targeting:</td>
-			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes [Please include DMAs in special instructions box] </td>
+			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 42px;" name="geo_target_yes" id="geo_target_yes"></textarea> </td>
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Content targeting:</td>
-			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes [Please include dates or article content in special instructions box] </td>
+			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 42px;" name="content_target_yes" id="content_target_yes"></textarea> </td>
 		</tr>
 		<tr>
 			<td>If there is a special PowerPoint template (different from the Centro template), please attach:</td>
@@ -210,5 +210,11 @@ tinymce.init({
 			});
 		}
      });
+
+	$(window).load(function(){
+		tinymce.remove('#network_yes');
+		tinymce.remove('#geo_target_yes');
+		tinymce.remove('#content_target_yes');
+	});
  </script>
 <?php get_footer('centro'); ?>
