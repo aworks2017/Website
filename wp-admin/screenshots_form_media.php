@@ -2,7 +2,7 @@
 ob_start();
 require_once('../phpmailer/class.phpmailer.php');
 require_once('../phpmailer/config.php');
-require_once('../wp-content/themes/formationpro/screenshot_mail_template.php');
+require_once('../wp-content/themes/formationpro/miq_mail_template.php');
 require_once('../wp-load.php');
 global $wpdb;
 $squantial_number = $wpdb->get_var("SELECT max(ID) FROM ".$wpdb->prefix."screenshot_form_submission");
@@ -21,7 +21,7 @@ ini_set('upload_max_filesize', '1000M');
 if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ])) {
 	saveFormData($_POST,$targetfolder,$form_submission_id);
 	$optional_name = basename($_POST['file_optional']);
-	$template_html= get_screenshot_mail_template();
+	$template_html= get_miq_mail_template();
 	$template_html = str_replace('form_submission_id', $form_submission_id, $template_html);
 	$template_html = str_replace('$end_date_of_campaign', $_POST['end_date_of_campaign'], $template_html);
 	$template_html = str_replace('$requester_email', $_POST['requester_email'], $template_html);
@@ -29,12 +29,18 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$template_html = str_replace('$screenshot_due_date',$_POST['screenshot_due_date'], $template_html);
 	$template_html = str_replace('$advertiser', $_POST['advertiser'], $template_html);
 	$template_html = str_replace('$campaign_id', $_POST['campaign_id'], $template_html);
-	$template_html = str_replace('$network', $_POST['network'], $template_html);
-	$template_html = str_replace('$no_of_screenshot',$_POST['no_of_screenshot'], $template_html);
-	$template_html = str_replace('$geo_target', $_POST['geo_target'], $template_html);
-	$template_html = str_replace('$content_target', $_POST['content_target'], $template_html);
+	$template_html = str_replace('$site_publishers', $_POST['sites_publishers'], $template_html);
+	if($_POST['geo_target'] == 'Yes'){
+		$template_html = str_replace('$geo_target', $_POST['geo_target_yes'], $template_html);
+	}else{
+		$template_html = str_replace('$geo_target', $_POST['geo_target'], $template_html);
+	}
+	if($_POST['content_target'] == 'Yes'){
+		$template_html = str_replace('$content_target', $_POST['content_target_yes'], $template_html);
+	}else{
+		$template_html = str_replace('$content_target', $_POST['content_target'], $template_html);
+	}
 	$template_html = str_replace('$special_instruction', $_POST['special_instruction'], $template_html);
-
 	$attachments = array();
 	$optional_file='';
 	if(isset($_FILES[ 'file' ]) && !empty($_FILES[ 'file' ])){
@@ -60,7 +66,7 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 			closedir($dht);
 		  }
 		}
-		create_zip($attachments, $targetfolder.'mediaiq-form_'.$form_submission_id.'.zip');
+		create_zip($attachments, $targetfolder.'miq-form_'.$form_submission_id.'.zip');
 	}elseif(isset($_FILES['file_optional']) && !empty($_FILES['file_optional'])){
 		if (!file_exists($targetfolder)) {
 			mkdir($targetfolder, 0777, true);
@@ -91,11 +97,11 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$mail->FromName = $email_config['from_name'];
 	$mail->AddCC($_POST[ 'requester_email' ],'');
 	if(isset($_FILES['file']) && !empty($_FILES['file'])){
-		$mail->addAttachment($targetfolder.'mediaiq-form_'.$form_submission_id.'.zip', 'mediaiq-form_'.$form_submission_id.'.zip');
+		$mail->addAttachment($targetfolder.'miq-form_'.$form_submission_id.'.zip', 'miq-form_'.$form_submission_id.'.zip');
 	}elseif(!empty($optional_file)){
 		$mail->addAttachment($targetfolder.$optional_file, $optional_file);
 	}
-	$mail->Subject = "MediaIQ data ".$form_submission_id."";
+	$mail->Subject = "MiQ data ".$form_submission_id."";
 	$mail->isHTML(true);
 	$mail->Body = $template_html;
 	$mail->AltBody = $template_html;
