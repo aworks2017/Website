@@ -31,7 +31,7 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$template_html = str_replace('$campaign_id', $_POST['campaign_id'], $template_html);
 	
 	if($_POST['network'] == 'Other'){
-		$network_yes = 'Yes - '.$_POST['network_yes'];
+		$network_yes = 'Other - '.$_POST['network_yes'];
 		$template_html = str_replace('$network', $network_yes, $template_html);
 	}else{
 		$template_html = str_replace('$network', $_POST['network'], $template_html);
