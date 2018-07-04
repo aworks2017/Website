@@ -19,9 +19,7 @@ $string='
 		<li><b>Networks:&nbsp;</b> $network </li> 
 		<li><b>Total number of screenshots:&nbsp;</b> $no_of_screenshot </li>
 		<li><b>Geo-targeting:&nbsp;</b> $geo_target </li>
-		<li><b>Geo-targeting-specify:&nbsp;</b> '.$_POST['geo_target_yes'].' </li>
 		<li><b>Content targeting:&nbsp;</b> $content_target </li>
-		<li><b>Content targeting specify:&nbsp;</b> '.$_POST['content_target_yes'].' </li>
 		<li><b>Any special instructions:&nbsp;</b> $special_instruction </li>
 	</ul>
 </p>';

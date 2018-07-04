@@ -29,12 +29,29 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$template_html = str_replace('$screenshot_due_date',$_POST['screenshot_due_date'], $template_html);
 	$template_html = str_replace('$advertiser', $_POST['advertiser'], $template_html);
 	$template_html = str_replace('$campaign_id', $_POST['campaign_id'], $template_html);
-	$template_html = str_replace('$network', $_POST['network'], $template_html);		
+	$template_html = str_replace('$network', $_POST['network'], $template_html);
+	
+	if($_POST['network'] == 'Other'){
+		$network_yes = 'Yes - '.$_POST['network_yes'];
+		$template_html = str_replace('$network', $network_yes, $template_html);
+	}else{
+		$template_html = str_replace('$network', $_POST['network'], $template_html);
+	}
+	
 	$template_html = str_replace('$no_of_screenshot',$_POST['no_of_screenshot'], $template_html);
-	$template_html = str_replace('$geo_target', $_POST['geo_target'], $template_html);
-	$template_html = str_replace('$geo_target_yes', $_POST['geo_target_yes'], $template_html);
-	$template_html = str_replace('$content_target', $_POST['content_target'], $template_html);
-	$template_html = str_replace('$content_target_yes', $_POST['content_target_yes'], $template_html);
+	
+	if($_POST['geo_target'] == 'Yes'){
+		$geo_target_yes = 'Yes - '.$_POST['geo_target_yes'];
+		$template_html = str_replace('$geo_target', $geo_target_yes, $template_html);
+	}else{
+		$template_html = str_replace('$geo_target', $_POST['geo_target'], $template_html);
+	}
+	if($_POST['content_target'] == 'Yes'){
+		$content_target_yes = 'Yes - '.$_POST['content_target_yes'];
+		$template_html = str_replace('$content_target', $content_target_yes, $template_html);
+	}else{
+		$template_html = str_replace('$content_target', $_POST['content_target'], $template_html);
+	}
 	$template_html = str_replace('$special_instruction', $_POST['special_instruction'], $template_html);
     
 	$attachments = array();

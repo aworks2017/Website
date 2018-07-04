@@ -31,12 +31,14 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$template_html = str_replace('$campaign_id', $_POST['campaign_id'], $template_html);
 	$template_html = str_replace('$site_publishers', $_POST['sites_publishers'], $template_html);
 	if($_POST['geo_target'] == 'Yes'){
-		$template_html = str_replace('$geo_target', $_POST['geo_target_yes'], $template_html);
+		$geo_target_yes = 'Yes - '.$_POST['geo_target_yes'];
+		$template_html = str_replace('$geo_target', $geo_target_yes, $template_html);
 	}else{
 		$template_html = str_replace('$geo_target', $_POST['geo_target'], $template_html);
 	}
 	if($_POST['content_target'] == 'Yes'){
-		$template_html = str_replace('$content_target', $_POST['content_target_yes'], $template_html);
+		$content_target_yes = 'Yes - '.$_POST['content_target_yes'];
+		$template_html = str_replace('$content_target', $content_target_yes, $template_html);
 	}else{
 		$template_html = str_replace('$content_target', $_POST['content_target'], $template_html);
 	}
