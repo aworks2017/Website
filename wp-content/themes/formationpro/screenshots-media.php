@@ -193,6 +193,9 @@ tinymce.init({
 				inputs.each(function() {
 					var name = $(this).attr('name');
 					var val = $('[name="'+name+'"]').val();
+					if(name=='geo_target' || name=='content_target' || name=='network'){
+						val = $('input[name='+name+']:checked').val();
+                    }
 					formData.append(name, val);
 				});
 					formData.append("special_instruction", tinyMCE.get('special_instruction').getContent());
