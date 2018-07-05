@@ -60,11 +60,11 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Geo-targeting:</td>
-			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 42px;" name="geo_target_yes" id="showOnYes"></textarea> </td>
+			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="geo_target_yes" id="showOnYes"></textarea> </td>
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Content targeting:</td>
-			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 42px;" name="content_target_yes" id="showOnYesContent"></textarea> </td>
+			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="content_target_yes" id="showOnYesContent"></textarea> </td>
 		</tr>
 		<tr>
 			<td>Please include any special instructions for this request (e.g. number of creative versions, unique site list, etc.)</td>
@@ -202,7 +202,7 @@ tinymce.init({
 			});
 		}
      });
-	
+
 	$(window).load(function(){
 		tinymce.remove('#showOnYes');
 		tinymce.remove('#showOnYesContent');
