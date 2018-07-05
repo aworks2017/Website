@@ -84,7 +84,7 @@ add_action( 'wp_enqueue_scripts', function(){
 		<div>
 		<br>
 		<input type="submit" name="screenshot_submit" id="screenshot_submit" value="Submit" class="btnRegister" onclick=" return checkFileUploaded();">
-		<span id="span_file_size_error"  style="color: red; display:none">File size is greater than 50MB.</span>
+		<span id="span_file_size_error"  style="color: red; display:none">File size is greater than 25MB.</span>
 		</div>
 		</form>
 	</div>
@@ -136,6 +136,11 @@ tinymce.init({
 						$("#span_"+name_field).hide();
 					}
 				});
+		if(check == false){
+			$('html, body').animate({
+		        scrollTop: $("#screenshotForm").offset().top
+		    }, 1000);
+		}
 		return check;
 	}
 	var element = "#dZUpload";
@@ -169,9 +174,12 @@ tinymce.init({
 				}
 			});
 			this.on("complete", function(file) {
-            if (file.size > 50*1024*1024) {
+            if (file.size > 25*1024*1024) {
                 this.removeFile(file);
                 $("#span_file_size_error").show();
+                $('html, body').animate({
+			        scrollTop: $("#screenshotForm").offset().top
+			    }, 1000);
                 return false;
             }else{
                 $("#span_file_size_error").hide();
@@ -185,6 +193,9 @@ tinymce.init({
 				inputs.each(function() {
 					var name = $(this).attr('name');
 					var val = $('[name="'+name+'"]').val();
+					if(name=='geo_target' || name=='content_target' || name=='network'){
+						val = $('input[name='+name+']:checked').val();
+                    }
 					formData.append(name, val);
 				});
 					formData.append("special_instruction", tinyMCE.get('special_instruction').getContent());
