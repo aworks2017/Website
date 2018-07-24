@@ -56,8 +56,11 @@ add_action( 'wp_enqueue_scripts', function(){
 			<td><input type="radio" name="network" value="Basis DSP" checked> Basis DSP  <input type="radio" name="network" value="Brand Exchange" style="margin-left: 15px;"> Brand Exchange  <input type="radio" name="network" value="Other" style="margin-left: 15px;"> Other (please specify)<textarea  style="margin: 0px;width: 300px;height: 21px;" name="network_yes" id="network_yes"></textarea></td>
 		</tr>
 		<tr>
-			<td>Total number of screenshots (if blank, we will deliver 1 screenshot per creative size):</td>
-			<td><input type="text" name="no_of_screenshot" id="no_of_screenshot" style="margin-top: 5px;"></td>
+			<td>Total number of screenshots :<span  style="color: red;">*</span></td>
+			<td>
+				<input type="text" class="required_fields" name="no_of_screenshot" id="no_of_screenshot" style="margin-top: 5px;">
+				<span id="span_no_of_screenshot" style="color: red; display:none">Total number of screenshots is required</span>
+			</td>
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Geo-targeting:</td>
