@@ -38,9 +38,9 @@ add_action( 'wp_enqueue_scripts', function(){
 			<td><input type="text" name="additional_screenshot" id="additional_screenshot" style="margin-top: 5px;"></td>
 		</tr>
 		<tr>
-			<td>Our standard turnaround time is by EOD the next business day. If you have an urgent request, please list the due date and time here: <span style="color: red;"></span></td>
+			<td>Our standard turnaround time is by EOD the next business day. If you have an urgent request, please list the due date and time here. AutonomyWorks will confirm if we can meet this deadline <span style="color: red;"></span></td>
 			<td><input type="text" name="screenshot_due_date" class="required_fields" id="screenshot_due_date" style="margin-top: 5px;">
-			 AutonomyWorks will confirm if we can meet this deadline</td>
+			 </td>
 		</tr>
 		<tr>
 			<td>Advertiser:<span style="color: red;">*</span></td>
@@ -67,7 +67,7 @@ add_action( 'wp_enqueue_scripts', function(){
 			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="content_target_yes" id="showOnYesContent"></textarea> </td>
 		</tr>
 		<tr>
-			<td>Please include any special instructions for this request (e.g. number of creative versions, unique site list, etc.)</td>
+			<td>Please include any special instructions for this request (e.g. number of creative versions, client template, etc.)</td>
 			<td><textarea name="special_instruction" id="special_instruction" style="margin: 0px;width: 300px;height: 42px;"></textarea>
 			</td>
 		</tr>
