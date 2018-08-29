@@ -44,18 +44,18 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td>Advertiser:<span style="color: red;">*</span></td>
-			<td><input type="text" class="required_fields" name="advertiser" id="advertiser" style="margin-top: 5px; max-width: 330px; width: 100%;" >
+			<td><input type="text" class="required_fields" name="advertiser" id="advertiser" style="margin-top: 5px; width: 330px;" >
 			<span id="span_advertiser"  style="color: red; display:none">Advertiser is required</span></td>
 		</tr>
 		<tr>
 			<td>Creative ID(s):<span  style="color: red;">*</span></td>
-			<td><textarea class="required_fields" name="campaign_id"  id="campaign_id"  cols="50" rows="6" style="width: auto; margin-top: 5px; margin-bottom: 5px;"></textarea>
+			<td><textarea class="required_fields" name="campaign_id"  id="campaign_id"  cols="50" rows="6" style="width: 330px; margin-top: 5px; margin-bottom: 5px;"></textarea>
 			<span id="span_campaign_id"  style="color: red; display:none">Creative ID is required</span></td>
 		</tr>
 		<tr>
 			<td>Sites / Publishers:</td>
 			<td>
-				<textarea name="sites_publishers"  id="sites_publishers" cols="50" rows="6" style="width: auto;"></textarea>
+				<textarea name="sites_publishers"  id="sites_publishers" cols="50" rows="6" style="width: 330px;"></textarea>
 			</td>
 		</tr>
 		<tr>
