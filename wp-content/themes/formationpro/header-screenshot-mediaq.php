@@ -45,7 +45,7 @@
 				<header id="masthead" class="site-header header_container" role="banner">
 
 						<div class="centro-site-logo" style="float: left;display: block;margin: 30px 0 0 30px;">
-							
+							<a href="<?php echo get_site_url(); ?>" title="MediaQ" rel="home"><img src="<?php echo get_site_url(); ?>/wp-content/themes/formationpro/images/media_q_logo.png" alt="MiQ" style="height:30px"></a>
 						</div>
 
 					<nav role="navigation" class="site-navigation main-navigation">
