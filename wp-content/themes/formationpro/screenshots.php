@@ -53,7 +53,9 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Network: </td>
-			<td><input type="radio" name="network" value="Basis DSP" checked> Basis DSP  <input type="radio" name="network" value="Brand Exchange" style="margin-left: 15px;"> Brand Exchange  <input type="radio" name="network" value="Other" style="margin-left: 15px;"> Other (please specify)<textarea  style="margin: 0px;width: 300px;height: 21px;" name="network_yes" id="network_yes"></textarea></td>
+			<td><input type="radio" name="network" value="Basis DSP" checked> Basis DSP  <input type="radio" name="network" value="Brand Exchange" style="margin-left: 15px;"> Brand Exchange  <input type="radio" name="network" value="Other" style="margin-left: 15px;"> Other (please specify)<textarea  style="margin: 0px;width: 160px;height: 21px;" name="network_yes" id="network_yes"></textarea>
+				<span id="span_network"  style="color: red; display:none; font-size: 11px;">Network specify is required</span>
+			</td>
 		</tr>
 		<tr>
 			<td>Total number of screenshots :<span  style="color: red;">*</span></td>
@@ -64,11 +66,15 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Geo-targeting:</td>
-			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="geo_target_yes" id="geo_target_yes"></textarea> </td>
+			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="geo_target_yes" id="geo_target_yes"></textarea> 
+				<span id="span_geo_targeting"  style="color: red; display:none; font-size: 11px;">Geo-targeting specify is required</span>
+			</td>
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Content targeting:</td>
-			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="content_target_yes" id="content_target_yes"></textarea> </td>
+			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="content_target_yes" id="content_target_yes"></textarea> 
+				<span id="span_content_targeting"  style="color: red; display:none; font-size: 11px;">Content targeting specify is required</span>
+			</td>
 		</tr>
 		<tr>
 			<td>If there is a special PowerPoint template (different from the Centro template), please attach:</td>
@@ -92,7 +98,7 @@ add_action( 'wp_enqueue_scripts', function(){
 			</div>
 		<div>
 		<br>
-		<input type="submit" name="screenshot_submit" id="screenshot_submit" value="Submit" class="btnRegister" onclick=" return checkFileUploaded();">
+		<input type="submit" name="screenshot_submit" id="screenshot_submit" value="Submit" class="btnRegister" onclick=" return false;">
 		<span id="span_file_size_error"  style="color: red; display:none">File size is greater than 25MB.</span>
 		</div>
 		</form>
@@ -133,6 +139,34 @@ tinymce.init({
 	function checkFileUploaded(){
 		var inputs_val = $('#screenshotForm .required_fields');
 		var check = true;
+		
+		var network = $("input[name='network']:checked").val();
+		var network_yes = $("textarea[name='network_yes']").val();
+		
+		var geo_target = $("input[name='geo_target']:checked").val();
+		var geo_target_yes = $("textarea[name='geo_target_yes']").val();
+		
+		var content_target = $("input[name='content_target']:checked").val();
+		var content_target_yes = $("textarea[name='content_target_yes']").val();
+		
+		if(network == 'Other' && network_yes == ''){
+			$("#span_network").show();
+			check = false;
+		}else{
+			$("#span_network").hide();
+		}
+		if(geo_target == 'Yes' && geo_target_yes == ''){
+			$("#span_geo_targeting").show();
+			check = false;
+		}else{
+			$("#span_geo_targeting").hide();
+		}
+		if(content_target == 'Yes' && content_target_yes == ''){
+			$("#span_content_targeting").show();
+			check = false;
+		}else{
+			$("#span_content_targeting").hide();
+		}
 				inputs_val.each(function() {
 					var name_field = $(this).attr('name');
 					var field_val = $('[name="'+name_field+'"]').val();
