@@ -81,7 +81,7 @@ add_action( 'wp_enqueue_scripts', function(){
 			</td>
 		</tr>
 		</table>
-		Creative files (please attach):
+		Creative files (please attach - Max 25 MB):
 			<div id="dZUpload" class="dropzone">
 				 <div class="fallback">
 				  <input name="file[]" type="file" multiple />
