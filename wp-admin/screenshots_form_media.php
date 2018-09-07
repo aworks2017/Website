@@ -76,7 +76,7 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 		move_uploaded_file($_FILES['file_optional']['tmp_name'], $targetfolder.basename($_FILES['file_optional']['name']));
 		$optional_file = $_FILES['file_optional']['name'];
 	}
-	
+
 	$mail = new PHPMailer;
 	//Enable SMTP debugging.
 	$mail->SMTPDebug = false;
@@ -112,11 +112,15 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	}
 	if($mail->send()){
 		$redirect_url = '/forms/clients/mediaiq-screenshots-submission?form_submission_id='.$form_submission_id;
-		header('Location: '.site_url().$redirect_url);exit();
 	}
 	else{
 		$redirect_url =  '/forms/clients/mediaiq-screenshots-submission?not_sent=1';
-		echo site_url().$redirect_url;exit();
+	}
+	if(isset($_REQUEST['no_attachments_flag']) && $_REQUEST['no_attachments_flag']==1){
+		ob_clean();
+		header('Location: '.site_url().$redirect_url);exit();
+	}else{
+		echo site_url().$redirect_url;
 	}
 }
 function create_zip($files = array(),$destination = '',$overwrite = false) {

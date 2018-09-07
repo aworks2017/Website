@@ -122,11 +122,15 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	}
 	if($mail->send()){
 		$redirect_url = '/forms/clients/centro-screenshots-submission?form_submission_id='.$form_submission_id;
-		header('Location: '.site_url().$redirect_url);exit();
 	} 
 	else{
 		$redirect_url =  '/forms/clients/centro-screenshots-submission?not_sent=1';
-		echo site_url().$redirect_url;exit();
+	}
+	if(isset($_REQUEST['no_attachments_flag']) && $_REQUEST['no_attachments_flag']==1){
+		ob_clean();
+		header('Location: '.site_url().$redirect_url);exit();
+	}else{
+		echo site_url().$redirect_url;
 	}
 }
 function create_zip($files = array(),$destination = '',$overwrite = false) {

@@ -21,11 +21,6 @@ add_action( 'wp_enqueue_scripts', function(){
 		<head>
 		</head>
 		<body>
-		<?php
-		if ($_GET['not_sent'] == '1') {
-			echo '<p style="background-color: #a94442; padding: 10px; color: #fff;">Error! Email not send</p>';
-		}
-		?>
 		<form name="screenshotForm"  id="screenshotForm"  action="<?php echo admin_url('screenshots_form_media.php');?>" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="no_attachments_flag" id="no_attachments_flag" value="1">
 		<input type="hidden" name="mediaiq" value="1">
