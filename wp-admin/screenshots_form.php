@@ -126,12 +126,7 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	else{
 		$redirect_url =  '/forms/clients/centro-screenshots-submission?not_sent=1';
 	}
-	if(isset($_REQUEST['no_attachments_flag']) && $_REQUEST['no_attachments_flag']==1){
-		ob_clean();
-		header('Location: '.site_url().$redirect_url);exit();
-	}else{
-		echo site_url().$redirect_url;
-	}
+	header('Location: '.site_url().$redirect_url);exit();
 }
 function create_zip($files = array(),$destination = '',$overwrite = false) {
 	//if the zip file already exists and overwrite is false, return false
