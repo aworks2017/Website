@@ -98,7 +98,7 @@ add_action( 'wp_enqueue_scripts', function(){
 			</div>
 		<div>
 		<br>
-		<input type="submit" name="screenshot_submit" id="screenshot_submit" value="Submit" class="btnRegister" onclick=" return false;">
+		<input type="submit" name="screenshot_submit" id="screenshot_submit" value="Submit" class="btnRegister" onclick=" return checkFileUploaded();">
 		<span id="span_file_size_error"  style="color: red; display:none">File size is greater than 25MB.</span>
 		</div>
 		</form>
@@ -167,28 +167,28 @@ tinymce.init({
 		}else{
 			$("#span_content_targeting").hide();
 		}
-				inputs_val.each(function() {
-					var name_field = $(this).attr('name');
-					var field_val = $('[name="'+name_field+'"]').val();
-					if(isEmpty(field_val)){
-						if(typeof ($("#span_"+name_field)) !== 'undefined' && $("#span_"+name_field).length > 0){
-							$("#span_"+name_field).show();
-							check = false;
-						}
-					}else{
-						$("#span_"+name_field).hide();
-					}
-				});
+		inputs_val.each(function() {
+			var name_field = $(this).attr('name');
+			var field_val = $('[name="'+name_field+'"]').val();
+			if(isEmpty(field_val)){
+				if(typeof ($("#span_"+name_field)) !== 'undefined' && $("#span_"+name_field).length > 0){
+					$("#span_"+name_field).show();
+					check = false;
+				}
+			}else{
+				$("#span_"+name_field).hide();
+			}
+		});
 		if($('#file_optional').val() !=''){
 			if($('#file_optional')[0].files[0].size <= 50*1024*1024){
 				 $("#span_file_optional").hide();
 			 }else{
-				 $("#span_file_optional").show();
-					$('html, body').animate({
-				        scrollTop: $("#screenshotForm").offset().top
-				    }, 1000);
-				 return false;
-				}
+				$("#span_file_optional").show();
+				$('html, body').animate({
+					scrollTop: $("#screenshotForm").offset().top
+				}, 1000);
+				return false;
+			}
 		}
 		if(check == false){
 			$('html, body').animate({
