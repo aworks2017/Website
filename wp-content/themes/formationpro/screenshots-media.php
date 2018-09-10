@@ -124,18 +124,18 @@ tinymce.init({
 	function checkFileUploaded(){
 		var inputs_val = $('#screenshotForm .required_fields');
 		var check = true;
-				inputs_val.each(function() {
-					var name_field = $(this).attr('name');
-					var field_val = $('[name="'+name_field+'"]').val();
-					if(isEmpty(field_val)){
-						if(typeof ($("#span_"+name_field)) !== 'undefined' && $("#span_"+name_field).length > 0){
-							$("#span_"+name_field).show();
-							check = false;
-						}
-					}else{
-						$("#span_"+name_field).hide();
-					}
-				});
+		inputs_val.each(function() {
+			var name_field = $(this).attr('name');
+			var field_val = $('[name="'+name_field+'"]').val();
+			if(isEmpty(field_val)){
+				if(typeof ($("#span_"+name_field)) !== 'undefined' && $("#span_"+name_field).length > 0){
+					$("#span_"+name_field).show();
+					check = false;
+				}
+			}else{
+				$("#span_"+name_field).hide();
+			}
+		});
 		if(check == false){
 			$('html, body').animate({
 		        scrollTop: $("#screenshotForm").offset().top
@@ -155,11 +155,11 @@ tinymce.init({
 		maxFiles: 100,
 		autoProcessQueue: false,
         success: function (file,response) {
-		   if((response)){
+			if((response)){
 			   url_redirect = response.replace(/\s/g, '');
 			   window.location.href= url_redirect;
-		  }
-  },
+			}
+		},
 		init: function() {
 			dzClosure = this;
 			document.getElementById("screenshot_submit").addEventListener("click", function(e) {
@@ -201,7 +201,7 @@ tinymce.init({
 					formData.append("special_instruction", tinyMCE.get('special_instruction').getContent());
 			});
 		}
-     });
+	});
 
 	$(window).load(function(){
 		tinymce.remove('#showOnYes');

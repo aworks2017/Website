@@ -118,9 +118,9 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	}
 	if(isset($_REQUEST['no_attachments_flag']) && $_REQUEST['no_attachments_flag']==1){
 		ob_clean();
-		header('Location: '.$_SERVER['HTTP_ORIGIN'].'/'.$redirect_url);exit();
+		header('Location: '.site_url().$redirect_url);exit();
 	}else{
-		echo $redirect_url;
+		echo site_url().$redirect_url;
 	}
 }
 function create_zip($files = array(),$destination = '',$overwrite = false) {
