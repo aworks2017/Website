@@ -49,7 +49,7 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td>Creative ID(s):<span  style="color: red;">*</span></td>
-			<td><textarea class="required_fields" name="campaign_id"  id="campaign_id" style="width: 330px; margin-top: 5px; margin-bottom: 5px;height: 42px;"></textarea>
+			<td><textarea class="required_fields" name="campaign_id"  id="campaign_id" style="width: 330px; margin: 0px; height: 42px;"></textarea>
 			<span id="span_campaign_id"  style="color: red; display:none">Creative ID is required</span></td>
 		</tr>
 		<tr>
@@ -127,6 +127,9 @@ tinymce.init({
 		inputs_val.each(function() {
 			var name_field = $(this).attr('name');
 			var field_val = $('[name="'+name_field+'"]').val();
+			if(name_field=='campaign_id'){
+				field_val = tinyMCE.get('campaign_id').getContent();
+			}
 			if(isEmpty(field_val)){
 				if(typeof ($("#span_"+name_field)) !== 'undefined' && $("#span_"+name_field).length > 0){
 					$("#span_"+name_field).show();
@@ -199,6 +202,7 @@ tinymce.init({
 					formData.append(name, val);
 				});
 					formData.append("special_instruction", tinyMCE.get('special_instruction').getContent());
+					formData.append("campaign_id", tinyMCE.get('campaign_id').getContent());
 			});
 		}
 	});
