@@ -49,7 +49,7 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td>Creative ID(s):<span  style="color: red;">*</span></td>
-			<td><textarea class="required_fields" name="campaign_id"  id="campaign_id" style="width: 330px; margin: 0px; height: 42px;"></textarea>
+			<td><textarea class="required_fields" name="campaign_id"  id="campaign_id" style="width: 330px; margin: 0px; height: 45px;"></textarea>
 			<span id="span_campaign_id"  style="color: red; display:none">Creative ID is required</span></td>
 		</tr>
 		<tr>
