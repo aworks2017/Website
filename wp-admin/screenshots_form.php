@@ -29,16 +29,16 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$template_html = str_replace('$screenshot_due_date',$_POST['screenshot_due_date'], $template_html);
 	$template_html = str_replace('$advertiser', $_POST['advertiser'], $template_html);
 	$template_html = str_replace('$campaign_id', $_POST['campaign_id'], $template_html);
-	
+
 	if($_POST['network'] == 'Other'){
 		$network_yes = 'Other - '.$_POST['network_yes'];
 		$template_html = str_replace('$network', $network_yes, $template_html);
 	}else{
 		$template_html = str_replace('$network', $_POST['network'], $template_html);
 	}
-	
+
 	$template_html = str_replace('$no_of_screenshot',$_POST['no_of_screenshot'], $template_html);
-	
+
 	if($_POST['geo_target'] == 'Yes'){
 		$geo_target_yes = 'Yes - '.$_POST['geo_target_yes'];
 		$template_html = str_replace('$geo_target', $geo_target_yes, $template_html);
@@ -51,8 +51,8 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	}else{
 		$template_html = str_replace('$content_target', $_POST['content_target'], $template_html);
 	}
-	$template_html = str_replace('$special_instruction', $_POST['special_instruction'], $template_html);
-    
+	$template_html = str_replace('$special_instruction', stripslashes($_POST['special_instruction']), $template_html);
+
 	$attachments = array();
 	$optional_file='';
 	if(isset($_FILES[ 'file' ]) && !empty($_FILES[ 'file' ])){
@@ -71,7 +71,7 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 				}
 				if($file != $optional_name){
 					$attachments []= $targetfolder.$file;
-				}else{				
+				}else{
 					$optional_file = $file;
 				}
 			}
@@ -86,24 +86,24 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 		move_uploaded_file($_FILES['file_optional']['tmp_name'], $targetfolder.basename($_FILES['file_optional']['name']));
 		$optional_file = $_FILES['file_optional']['name'];
 	}
-	 
+
 	$mail = new PHPMailer;
-	//Enable SMTP debugging. 
+	//Enable SMTP debugging.
 	$mail->SMTPDebug = false;
-	$mail->do_debug = 0;                             
+	$mail->do_debug = 0;
 	//Set PHPMailer to use SMTP.
-	$mail->isSMTP();            
-	//Set SMTP host name                          
+	$mail->isSMTP();
+	//Set SMTP host name
 	$mail->Host = $email_config['host'];
 	//Set this to true if SMTP host requires authentication to send email
-	$mail->SMTPAuth = true;                          
-	//Provide username and password     
-	$mail->Username = $email_config['user_name'];                 
-	$mail->Password = $email_config['password'];                           
+	$mail->SMTPAuth = true;
+	//Provide username and password
+	$mail->Username = $email_config['user_name'];
+	$mail->Password = $email_config['password'];
 	//If SMTP requires TLS encryption then set it
-	$mail->SMTPSecure = $email_config['smtp'];                           
-	//Set TCP port to connect to 
-	$mail->Port = $email_config['port'];                                   
+	$mail->SMTPSecure = $email_config['smtp'];
+	//Set TCP port to connect to
+	$mail->Port = $email_config['port'];
 
 	$mail->From = $email_config['from_email'];
 	$mail->FromName = $email_config['from_name'];
@@ -116,13 +116,13 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$mail->Subject = "Centro form data ".$form_submission_id."";
 	$mail->isHTML(true);
 	$mail->Body = $template_html;
-	$mail->AltBody = $template_html;	
+	$mail->AltBody = $template_html;
 	foreach($email_config['userEmail'] as $email){
-		$mail->addAddress($email, $email_config['userName']);	
+		$mail->addAddress($email, $email_config['userName']);
 	}
 	if($mail->send()){
 		$redirect_url = '/forms/clients/centro-screenshots-submission?form_submission_id='.$form_submission_id;
-	} 
+	}
 	else{
 		$redirect_url =  '/forms/clients/centro-screenshots-submission?not_sent=1';
 	}
@@ -160,10 +160,10 @@ function create_zip($files = array(),$destination = '',$overwrite = false) {
 			$new_filename = substr($file,strrpos($file,'/') + 1);
 			$zip->addFile($file,$new_filename);
 		}
-		
+
 		//close the zip -- done!
 		$zip->close();
-		
+
 		//check to make sure the file exists
 		return file_exists($destination);
 	}
