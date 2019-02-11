@@ -11,12 +11,13 @@ $string='
 <p>Please find attached data and files you submitted. The form submission ID is form_submission_id </p>
 <p>
 	<ul>
-		<li><b>Requester email address:&nbsp;</b> $requester_email </li> 
+		<li><b>Requester email address:&nbsp;</b> $requester_email </li>
 		<li><b>Additional screenshot recipients:&nbsp;</b> $additional_screenshot </li>
-		<li><b>Screenshot Due Date:&nbsp;</b> $screenshot_due_date </li> 
+		<li><b>Screenshot Due Date:&nbsp;</b> $screenshot_due_date </li>
 		<li><b>Advertiser:&nbsp;</b> $advertiser </li>
+		<li><b>Campaign Name:&nbsp;</b> $campaign_name </li>
 		<li><b>Campaign ID(s):&nbsp;</b> $campaign_id </li>
-		<li><b>Networks:&nbsp;</b> $network </li> 
+		<li><b>Networks:&nbsp;</b> $network </li>
 		<li><b>Total number of screenshots:&nbsp;</b> $no_of_screenshot </li>
 		<li><b>Geo-targeting:&nbsp;</b> $geo_target </li>
 		<li><b>Content targeting:&nbsp;</b> $content_target </li>
@@ -24,4 +25,3 @@ $string='
 	</ul>
 </p>';
 return $string; } ?>
-  

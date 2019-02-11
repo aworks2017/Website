@@ -47,6 +47,11 @@ add_action( 'wp_enqueue_scripts', function(){
 			<span id="span_advertiser"  style="color: red; display:none">Advertiser is required</span></td>
 		</tr>
 		<tr>
+			<td>Campaign Name:<span style="color: red;">*</span></td>
+			<td><input type="text" class="required_fields" name="campaign_name" id="campaign_name" style="margin-top: 5px;" >
+			<span id="span_campaign_name"  style="color: red; display:none">Campaign Name is required</span></td>
+		</tr>
+		<tr>
 			<td>Campaign ID(s):<span  style="color: red;">*</span></td>
 			<td><input type="text" class="required_fields" name="campaign_id"  id="campaign_id" style="margin-top: 5px;" >
 			<span id="span_campaign_id"  style="color: red; display:none">Campaign ID is required</span></td>
@@ -66,13 +71,13 @@ add_action( 'wp_enqueue_scripts', function(){
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Geo-targeting:</td>
-			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="geo_target_yes" id="geo_target_yes"></textarea> 
+			<td><input type="radio" name="geo_target" value="No" checked> No  <input type="radio" name="geo_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="geo_target_yes" id="geo_target_yes"></textarea>
 				<span id="span_geo_targeting"  style="color: red; display:none; font-size: 11px;">Geo-targeting specify is required</span>
 			</td>
 		</tr>
 		<tr>
 			<td style="padding: 10px 0;">Content targeting:</td>
-			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="content_target_yes" id="content_target_yes"></textarea> 
+			<td><input type="radio" name="content_target" value="No" checked> No  <input type="radio" name="content_target" value="Yes"  style="margin-left: 15px;"> Yes (please specify) <textarea  style="margin: 0px;width: 300px;height: 21px;" name="content_target_yes" id="content_target_yes"></textarea>
 				<span id="span_content_targeting"  style="color: red; display:none; font-size: 11px;">Content targeting specify is required</span>
 			</td>
 		</tr>
@@ -139,16 +144,16 @@ tinymce.init({
 	function checkFileUploaded(){
 		var inputs_val = $('#screenshotForm .required_fields');
 		var check = true;
-		
+
 		var network = $("input[name='network']:checked").val();
 		var network_yes = $("textarea[name='network_yes']").val();
-		
+
 		var geo_target = $("input[name='geo_target']:checked").val();
 		var geo_target_yes = $("textarea[name='geo_target_yes']").val();
-		
+
 		var content_target = $("input[name='content_target']:checked").val();
 		var content_target_yes = $("textarea[name='content_target_yes']").val();
-		
+
 		if(network == 'Other' && network_yes == ''){
 			$("#span_network").show();
 			check = false;
