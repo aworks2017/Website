@@ -28,7 +28,7 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$template_html = str_replace('$additional_screenshot',$_POST['additional_screenshot'], $template_html);
 	$template_html = str_replace('$screenshot_due_date',$_POST['screenshot_due_date'], $template_html);
 	$template_html = str_replace('$advertiser', $_POST['advertiser'], $template_html);
-	$template_html = str_replace('$campaign_id', $_POST['campaign_id'], $template_html);
+	$template_html = str_replace('$campaign_id', stripslashes($_POST['campaign_id']), $template_html);
 	$template_html = str_replace('$site_publishers', $_POST['sites_publishers'], $template_html);
 	if($_POST['geo_target'] == 'Yes'){
 		$geo_target_yes = 'Yes - '.$_POST['geo_target_yes'];
@@ -42,7 +42,7 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	}else{
 		$template_html = str_replace('$content_target', $_POST['content_target'], $template_html);
 	}
-	$template_html = str_replace('$special_instruction', $_POST['special_instruction'], $template_html);
+	$template_html = str_replace('$special_instruction', stripslashes($_POST['special_instruction']), $template_html);
 	$attachments = array();
 	$optional_file='';
 	if(isset($_FILES[ 'file' ]) && !empty($_FILES[ 'file' ])){
