@@ -18,7 +18,7 @@ function my_theme_enqueue_styles() {
  *
  * @since formationpro 1.0
  */
-function formationpro_widgets_init() {
+function formationpro_widgets_init_child() {
 	register_sidebar( array(
 		'name' => __( 'Primary Sidebar', 'formationpro' ),
 		'id' => 'sidebar-1',
@@ -92,12 +92,12 @@ function formationpro_widgets_init() {
 		));
 
 }
-add_action( 'widgets_init', 'formationpro_widgets_init' );
+add_action( 'widgets_init', 'formationpro_widgets_init_child' );
 
 /**
  * Enqueue scripts and styles
  */
-function formationpro_scripts() {
+function formationpro_scripts_child() {
 
 	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '2.0.2' );
 
@@ -138,7 +138,7 @@ function formationpro_scripts() {
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'formationpro_scripts' );
+add_action( 'wp_enqueue_scripts', 'formationpro_scripts_child' );
 
 
 /* momo custom code start */
