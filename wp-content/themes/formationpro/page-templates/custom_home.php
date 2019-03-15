@@ -14,16 +14,18 @@ get_header(); ?>
         <?php
 
           $featured_cat   =   get_theme_mod( 'homepage_slider_cat' );
-		  
           $number         =   get_theme_mod( 'homepage_slider_slide_no' );
-		  
-		  $slider_arg = array(
-			  	'post_type'=>array('post','page'),
-                'showposts' => $number,
-				'meta_key'=>'slider',
-              );
 
-          $the_query     =   new WP_Query($slider_arg);
+          $the_query     =   new WP_Query( array( 
+            'cat'             => $featured_cat, 
+            'posts_per_page'  => $number,
+            'meta_query'      => array(
+                array(
+                  'key'           => '_thumbnail_id',
+                  'compare'       => 'EXISTS',
+                ),
+            ), 
+          ));
           
         ?>
             
@@ -38,7 +40,7 @@ get_header(); ?>
                       <div class="flex-caption-title">
                         <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                       </div>
-                      <p><?php $slide_desc = get_post_meta(get_the_ID(),'slider_description',true); echo ($slide_desc)?substr(trim($slide_desc),0,250):esc_html(get_slider_excerpt()); ?> <a href="<?php the_permalink() ?>"></a></p>
+                      <p><?php echo esc_html(get_slider_excerpt()); ?> <a href="<?php the_permalink() ?>">...</a></p>
                     </div>
                   </div>
                 </li>
@@ -181,7 +183,7 @@ get_header(); ?>
                     <?php echo '<h4>' . __('Insert Image', 'formationpro') . '</h4>'; ?>
                   <?php endif; ?>
                   <h3><a href="<?php echo esc_url( get_theme_mod( 'header_one_url' ) ); ?>"><?php echo esc_html(get_theme_mod( 'featured_textbox_header_one' ) ); ?></a></h3>
-                  <p><?php echo esc_html(get_theme_mod( 'featured_textbox_text_one' ) ); ?><br><a class="home_read_more" href="<?php echo esc_url( get_theme_mod( 'header_one_url' ) ); ?>">Learn More</a></p>
+                  <p><?php echo esc_html(get_theme_mod( 'featured_textbox_text_one' ) ); ?></p>
                 </div>
               </div>
 
@@ -193,7 +195,7 @@ get_header(); ?>
                   <?php echo '<h4>' . __('Insert Image', 'formationpro') . '</h4>'; ?>
                 <?php endif; ?>
                 <h3><a href="<?php echo esc_url( get_theme_mod( 'header_two_url' ) ); ?>"><?php echo esc_html(get_theme_mod( 'featured_textbox_header_two' ) ); ?></a></h3>
-                <p><?php echo esc_html(get_theme_mod( 'featured_textbox_text_two' ) ); ?><br><a class="home_read_more" href="<?php echo esc_url( get_theme_mod( 'header_two_url' ) ); ?>">Learn More</a></p>
+                <p><?php echo esc_html(get_theme_mod( 'featured_textbox_text_two' ) ); ?></p>
                 </div>
               </div>
 
@@ -205,7 +207,7 @@ get_header(); ?>
                   <?php echo '<h4>' . __('Insert Image', 'formationpro') . '</h4>'; ?>
                 <?php endif; ?>
                 <h3><a href="<?php echo esc_url( get_theme_mod( 'header_three_url' ) ); ?>"><?php echo esc_html(get_theme_mod( 'featured_textbox_header_three' ) ); ?></a></h3>
-                <p><?php echo esc_html(get_theme_mod( 'featured_textbox_text_three' ) ); ?><br><a class="home_read_more" href="<?php echo esc_url( get_theme_mod( 'header_three_url' ) ); ?>">Learn More</a></p>
+                <p><?php echo esc_html(get_theme_mod( 'featured_textbox_text_three' ) ); ?></p>
                 </div>
               </div>
 
@@ -250,11 +252,14 @@ get_header(); ?>
 
           <div class="section_thumbnails group animated" data-fx="fadeInUp">
 
+            <h3><?php if(get_theme_mod('homepage_recent_title')){ echo esc_html(get_theme_mod('homepage_recent_title')); } else { _e('Recent Posts', 'formationpro'); }?></h3>
+
+            <div class="unity-separator"></div>
+
             <?php $the_query = new WP_Query(
               array(
-			  	'post_type'=>array('post','page'),
                 'showposts' => 4,
-				'meta_key'=>'homepost',
+                'post__not_in' => get_option("sticky_posts"),
               ));
             ?>
 
@@ -275,12 +280,9 @@ get_header(); ?>
                     </div>
                   </div>
                   <!-- <div class="recent_title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div> -->
-                  <p><?php 
-				  $post_desc = get_post_meta(get_the_ID(),'description',true);
-				  echo ($post_desc)?substr(trim($post_desc),0,250):formationpro_get_recentposts_excerpt(); 
-				 	?></p>
+                  <p><?php echo formationpro_get_recentposts_excerpt(); ?></p>
                   <div class="thumbs-more-link">
-                    <a href="<?php the_permalink() ?>"> <?php $call2action=get_post_meta($post->ID,'call2action',true);if(!$call2action)$call2action='Read More';  echo __($call2action, 'formationpro'); ?></a>
+                    <a href="<?php the_permalink() ?>"> <?php echo __('More', 'formationpro'); ?></a>
                   </div>
                 </article>
               </div>	

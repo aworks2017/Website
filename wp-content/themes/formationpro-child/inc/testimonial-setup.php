@@ -277,3 +277,112 @@ add_action( 'widgets_init', 'register_testimonials_widget' );
 function register_testimonials_widget() {
 	register_widget( 'Testimonial_Widget' );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Section secondary navigation Widget
+ */
+// Creating the widget 
+class section_secondary_navigation_widget extends WP_Widget {
+
+function __construct() {
+parent::__construct(
+// Base ID of your widget
+'section_secondary_navigation_widget','Section secondary navigation', 
+
+// Widget description
+array( 'description' => 'Display Section secondary navigation', ) 
+);
+}
+
+public function widget( $args, $instance ) {
+	global $section_page, $section_pages ;
+	if(!$section_pages) return;
+	extract( $args );
+	$top_level = array();
+	
+	echo $args['before_widget'];
+	echo $before_title.strtoupper($section_page->post_title).$after_title;
+	echo '<ul>';
+	foreach ( $section_pages as $page ) {
+		array_push($top_level,$page->ID);
+  		$echo = '<li><a href="' . get_permalink($page->ID) . '">';
+		$echo .= '<strong>'.$page->post_title.'</strong>';
+		$echo .= '</a></li>';
+		echo $echo;
+  	}
+	echo '</ul>';
+	
+	// related content
+	$args = array(
+		//'sort_order' => 'asc',
+		//'sort_column' => 'menu_order',
+		'hierarchical' => 0,
+		'child_of' => $section_page->ID,
+		'post_type' => 'page',
+		'post_status' => 'publish',
+	);
+
+	$related_pages = get_pages($args);
+	$new_related_pages  = array();
+	foreach ( $related_pages as $i=>$page ) {
+		if($i>13) break;
+		if(in_array($page->ID,$top_level)) continue;
+		array_push($new_related_pages,$page);
+  	}
+	if($new_related_pages) {
+		echo $args['before_widget'];
+		echo $before_title.'RELATED CONTENT'.$after_title;
+		echo '<ul>';
+		foreach ( $new_related_pages as $i=>$page ) {
+			$echo = '<li><a href="' . get_permalink($page->ID) . '">';
+			$echo .= $page->post_title;
+			$echo .= '</a></li>';
+			echo $echo;
+  		}
+		echo '</ul>';
+		echo $args['after_widget'];
+	}
+}
+		
+// Widget Backend 
+public function form( $instance ) {
+}
+	
+// Updating widget replacing old instances with new
+public function update( $new_instance, $old_instance ) {
+return $new_instance;
+}
+} //end section_secondary_navigation_widget
+
+// Register and load the widget
+function section_secondary_navigation_load_widget() {
+	register_widget( 'section_secondary_navigation_widget' );
+}
+add_action( 'widgets_init', 'section_secondary_navigation_load_widget' );

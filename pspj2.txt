@@ -1,5 +1,0 @@
-Hello World 01 from file 2
-Second changed 
-parent issue
-child issue fixed
-Test build for IT-190 from Joe's email
