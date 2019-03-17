@@ -25,7 +25,7 @@ function my_theme_enqueue_styles() {
  */
 function formationpro_widgets_init_child() {
 	register_sidebar( array(
-		'name' => __( 'Primary Sidebar', 'formationpro' ),
+		'name' => __( 'Primary Sidebar', 'formationpro-child' ),
 		'id' => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -34,7 +34,7 @@ function formationpro_widgets_init_child() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Secondary Sidebar', 'formationpro' ),
+		'name' => __( 'Secondary Sidebar', 'formationpro-child' ),
 		'id' => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -43,7 +43,7 @@ function formationpro_widgets_init_child() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Left Sidebar', 'formationpro' ),
+		'name' => __( 'Left Sidebar', 'formationpro-child' ),
 		'id' => 'sidebar-3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -51,7 +51,7 @@ function formationpro_widgets_init_child() {
 		'after_title' => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Right Sidebar', 'formationpro' ),
+		'name' => __( 'Right Sidebar', 'formationpro-child' ),
 		'id' => 'sidebar-right',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
