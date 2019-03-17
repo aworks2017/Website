@@ -2,7 +2,7 @@
 ob_start();
 require_once('../phpmailer/class.phpmailer.php');
 require_once('../phpmailer/config.php');
-require_once('../wp-content/themes/formationpro/miq_mail_template.php');
+require_once('../wp-content/themes/formationpro-child/miq_mail_template.php');
 require_once('../wp-load.php');
 global $wpdb;
 $squantial_number = $wpdb->get_var("SELECT max(ID) FROM ".$wpdb->prefix."screenshot_form_submission");

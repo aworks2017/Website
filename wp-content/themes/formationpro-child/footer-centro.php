@@ -1,6 +1,6 @@
     <?php /*<div style="float: right;margin: 15px 80px;">
         <a href="http://www.autonomy.works">
-            <img src="/wp-content/themes/formationpro/images/img.png" width="68" height="33" alt="AutonomyWorks">
+            <img src="/wp-content/themes/formationpro-child/images/img.png" width="68" height="33" alt="AutonomyWorks">
         </a>
     </div>
 	*/?>
