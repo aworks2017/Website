@@ -1,19 +1,10 @@
 <?php
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 function my_theme_enqueue_styles() {
-<<<<<<< HEAD
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-<<<<<<< HEAD
 
     /*
 
-=======
-
-    /*
->>>>>>> parent of 21c47d7... Remove txt files not needed
-=======
-
->>>>>>> parent of 7e1acfe... Fixes to child theme CSS
     $parent_style = 'parent-style';
 
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
@@ -22,14 +13,8 @@ function my_theme_enqueue_styles() {
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 21c47d7... Remove txt files not needed
     */
-=======
->>>>>>> parent of 7e1acfe... Fixes to child theme CSS
 }
 
 
