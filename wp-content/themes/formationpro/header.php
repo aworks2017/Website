@@ -17,7 +17,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<meta name="joe">
+
 <?php if(get_theme_mod('formationpro_global_favicon')) : ?>
 	<link rel="shortcut icon" href="<?php echo esc_url(get_theme_mod('formationpro_global_favicon')); ?>" />
 <?php endif; ?>
@@ -75,7 +75,6 @@
 
 					<?php if ( get_theme_mod( 'formationpro_logo' ) ) : ?>
 
-
 						<div class="site-logo">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'formationpro_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
 						</div>
@@ -98,7 +97,7 @@
 						</div>
 
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-                        
+						
 					</nav><!-- .site-navigation .main-navigation -->
 
 				</header><!-- #masthead .site-header -->
