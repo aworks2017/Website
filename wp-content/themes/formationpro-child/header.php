@@ -18,13 +18,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <meta name="joe">
-<?php if(get_theme_mod('formationpro_global_favicon')) : ?>
-	<link rel="shortcut icon" href="<?php echo esc_url(get_theme_mod('formationpro_global_favicon')); ?>" />
-<?php endif; ?>
-
-<?php if(get_theme_mod('formationpro_global_apple_icon')) : ?>
-	<link rel="apple-touch-icon" href="<?php echo esc_url(get_theme_mod('formationpro_global_apple_icon')); ?>">
-<?php endif; ?>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -46,48 +39,24 @@
 
 			    <div id="topbar_container">
 				    <div class="topbar">
-					    <?php
+					    <div class='topbar_content_left'>
+							<div class="contact telnumber"><i class="fa fa-phone"></i> 630-403-8356</div>
+							<div class="contact email"><i class="fa fa-envelope"></i> <a href="mailto:ContactUs@emailautonomy.com">contactus@emailautonomy.com</a></div>
+							<div class="contact address"><i class="fa fa-map-marker"></i> <a href="https://goo.gl/maps/hEsiVp9L4JR2" target="_blank">5120 Belmont Rd., Downers Grove, IL</a></div>
+						</div>
 
-							$list_contact_options = array(
-								array('telnumber', __( 'Telephone Number', 'formationpro'), 'phone'),
-								array('mobile', __( 'Mobile Number', 'formationpro'), 'mobile'),
-								array('email', __( 'Email Address', 'formationpro'), 'envelope'),
-								array('address', __( 'Address', 'formationpro'), 'map-marker'),
-							);
-
-							echo "<div class='topbar_content_left'>";
-
-							$arraycount = count($list_contact_options);
-							for ($row = 0; $row <  $arraycount; $row++) {
-								if( get_theme_mod( $list_contact_options[$row][0] . '_textbox_header_one' ) ){
-									echo '<div class="contact ' . $list_contact_options[$row][0] . '"><i class="fa fa-' . $list_contact_options[$row][2] . '"></i> ' . get_theme_mod( $list_contact_options[$row][0] . '_textbox_header_one' ) . '</div>';
-								}
-							}
-
-							echo "</div>";
-
-					    ?>
 				    	<div class="topbar_content_right"><?php get_template_part( 'inc/socmed' ); ?></div>
 				    </div>
 			    </div>
 
 				<header id="masthead" class="site-header header_container" role="banner">
 
-					<?php if ( get_theme_mod( 'formationpro_logo' ) ) : ?>
-
-
 						<div class="site-logo">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'formationpro_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+							<!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'formationpro_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a> -->
+							<a href="http://staging.autonomy.works/" title="AutonomyWorks" rel="home"><img src="http://www.autonomy.works/wp-content/uploads/2015/10/logo.png" alt="AutonomyWorks"></a>
 						</div>
 
-					<?php else : ?>
 
-						<div class="site-introduction">
-							<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<p class="site-description"><?php bloginfo( 'description' ); ?></p> 
-						</div>
-
-					<?php endif; ?>
 
 					<nav role="navigation" class="site-navigation main-navigation">
 
@@ -98,7 +67,7 @@
 						</div>
 
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-                        
+
 					</nav><!-- .site-navigation .main-navigation -->
 
 				</header><!-- #masthead .site-header -->
@@ -113,5 +82,5 @@
 						</a>
 				<?php endif; ?>
 			</div>
-			
+
 			<div id="main" class="site-main">
