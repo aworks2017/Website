@@ -114,6 +114,28 @@ function formationpro_scripts_child() {
 add_action( 'wp_enqueue_scripts', 'formationpro_scripts_child' );
 
 
+
+function jt_get_theme_mod( $name, $default = false ) {
+	if ( is_child_theme() )
+		return get_theme_mod( $name, jt_get_parent_theme_mod( $name, $default ) );
+	return get_theme_mod( $name, $default );
+}
+
+function jt_get_parent_theme_mods() {
+	$slug = get_option( 'template' );
+	return get_option( "theme_mods_{$slug}", array() );
+}
+
+function jt_get_parent_theme_mod( $name, $default = false ) {
+	$mods = jt_get_parent_theme_mods();
+	if ( isset( $mods[ $name ] ) )
+		return $mods[ $name ];
+	if ( is_string( $default ) )
+		$default = sprintf( $default, get_template_directory_uri(), get_stylesheet_directory_uri() );
+	return $default;
+}
+
+
 /* momo custom code start */
 //adding header search form
 add_filter( 'wp_nav_menu_items', function($items,$arg){
