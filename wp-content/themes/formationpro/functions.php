@@ -246,7 +246,7 @@ function formationpro_get_recentposts_excerpt(){
 // Theme Options
 include('functions/customizer_controller.php');
 include('functions/customizer_settings.php');
-include('functions/customizer_styles.php');
+//include('functions/customizer_styles.php');
 
 
 /**
