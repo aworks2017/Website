@@ -115,6 +115,10 @@ add_action( 'wp_enqueue_scripts', 'formationpro_scripts_child' );
 
 
 
+
+/**
+ * Functions to get parent theme mods from within child theme
+ */
 function jt_get_theme_mod( $name, $default = false ) {
 	if ( is_child_theme() )
 		return get_theme_mod( $name, jt_get_parent_theme_mod( $name, $default ) );
@@ -133,6 +137,16 @@ function jt_get_parent_theme_mod( $name, $default = false ) {
 	if ( is_string( $default ) )
 		$default = sprintf( $default, get_template_directory_uri(), get_stylesheet_directory_uri() );
 	return $default;
+}
+
+function get_parent_theme_mods($mod = '') {
+  $ptheme = get_template_directory();
+  $theme_slug = basename($ptheme);
+  $mods = get_option( "theme_mods_{$theme_slug}");
+  if (!empty($mods) && isset($mods[$mod])) {
+    $mods = $mods[$mod];
+  }
+  return $mods;
 }
 
 
