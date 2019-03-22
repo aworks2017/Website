@@ -150,6 +150,8 @@ function get_parent_theme_mods($mod = '') {
 }
 
 
+include('functions/customizer_styles.php');
+
 /* momo custom code start */
 //adding header search form
 add_filter( 'wp_nav_menu_items', function($items,$arg){
