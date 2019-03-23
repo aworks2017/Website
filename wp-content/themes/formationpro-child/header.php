@@ -17,13 +17,13 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
-<meta name="joe">
-<?php if(get_theme_mod('formationpro_global_favicon')) : ?>
-	<link rel="shortcut icon" href="<?php echo esc_url(get_theme_mod('formationpro_global_favicon')); ?>" />
+
+<?php if(jt_get_theme_mod('formationpro_global_favicon')) : ?>
+	<link rel="shortcut icon" href="<?php echo esc_url(jt_get_theme_mod('formationpro_global_favicon')); ?>" />
 <?php endif; ?>
 
-<?php if(get_theme_mod('formationpro_global_apple_icon')) : ?>
-	<link rel="apple-touch-icon" href="<?php echo esc_url(get_theme_mod('formationpro_global_apple_icon')); ?>">
+<?php if(jt_get_theme_mod('formationpro_global_apple_icon')) : ?>
+	<link rel="apple-touch-icon" href="<?php echo esc_url(jt_get_theme_mod('formationpro_global_apple_icon')); ?>">
 <?php endif; ?>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -59,8 +59,8 @@
 
 							$arraycount = count($list_contact_options);
 							for ($row = 0; $row <  $arraycount; $row++) {
-								if( get_theme_mod( $list_contact_options[$row][0] . '_textbox_header_one' ) ){
-									echo '<div class="contact ' . $list_contact_options[$row][0] . '"><i class="fa fa-' . $list_contact_options[$row][2] . '"></i> ' . get_theme_mod( $list_contact_options[$row][0] . '_textbox_header_one' ) . '</div>';
+								if( jt_get_theme_mod( $list_contact_options[$row][0] . '_textbox_header_one' ) ){
+									echo '<div class="contact ' . $list_contact_options[$row][0] . '"><i class="fa fa-' . $list_contact_options[$row][2] . '"></i> ' . jt_get_theme_mod( $list_contact_options[$row][0] . '_textbox_header_one' ) . '</div>';
 								}
 							}
 
@@ -73,18 +73,17 @@
 
 				<header id="masthead" class="site-header header_container" role="banner">
 
-					<?php if ( get_theme_mod( 'formationpro_logo' ) ) : ?>
-
+					<?php if ( jt_get_theme_mod( 'formationpro_logo' ) ) : ?>
 
 						<div class="site-logo">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'formationpro_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( jt_get_theme_mod( 'formationpro_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
 						</div>
 
 					<?php else : ?>
 
 						<div class="site-introduction">
 							<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<p class="site-description"><?php bloginfo( 'description' ); ?></p> 
+							<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 						</div>
 
 					<?php endif; ?>
@@ -98,7 +97,7 @@
 						</div>
 
 						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-                        
+
 					</nav><!-- .site-navigation .main-navigation -->
 
 				</header><!-- #masthead .site-header -->
@@ -113,5 +112,5 @@
 						</a>
 				<?php endif; ?>
 			</div>
-			
+
 			<div id="main" class="site-main">
