@@ -156,7 +156,7 @@ include('functions/customizer_styles.php');
 //adding header search form
 add_filter( 'wp_nav_menu_items', function($items,$arg){
 	if($arg->theme_location!='primary') return $items;
-	$search_form_content = '<!-- search form -->
+	$search_form_content = '<!-- search form 2 -->
                         <li><form method="get" id="header_searchform" action="/" role="search">
                             <input type="text" class="field" name="s" value="" class="s" placeholder="Search …">
                         </form></li><li id="submit_header_search" class="fa fa-search"></li>
