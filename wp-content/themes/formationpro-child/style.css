@@ -1,20 +1,14 @@
 /*
-Theme Name: Formation Pro
-Theme URI: http://www.templateexpress.com/formation-pro-theme/
-Author: Template Express
-Author URI: http://www.templateexpress.com/
-Description: Formation Pro is a full-width, fully responsive and highly customizable WordPress Theme. Add your own logo, header, featured areas, social media links and much more. This versatile theme also has several different layout  and color templates that look great on devices of all sizes.
-Version: 2.0.3
-License: GNU General Public License v2.0
-License URI: ​http://www.gnu.org/licenses/gpl-2.0.html
-Tags: light, white, one-column, two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready, theme-options, full-width-template, black, responsive-layout
-
-This theme, like WordPress, is licensed under the GPL.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
+Theme Name: 	Formation Pro Child
+Theme URI: 	http://www.templateexpress.com/formation-pro-theme/
+Author: 	Joe Badrov
+Template: 	formationpro
+Description: 	Formation Pro Child Theme
+Version: 	1.0.0
+License: 	GNU General Public License v2.0
+License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Tags: 		light, white, one-column, two-columns, right-sidebar, fluid-layout, custom-header, custom-menu, featured-images, flexible-header, microformats, post-formats, rtl-language-support, threaded-comments, translation-ready, theme-options, full-width-template, black, responsive-layout
+Text Domain:	formation-pro-child
 */
 
 /*
@@ -59,6 +53,7 @@ html {
 }
 body {
 	background: #666;
+	overflow: hidden;
 }
 article,
 aside,
@@ -480,14 +475,17 @@ a.more-link:hover {
 #tertiary li a:hover{
 	color: #000;
 }
-#sidebar-left li a{
+#sidebar-left li a , #sidebar-right li a{
 	color: #666;
 }
-#sidebar-left li a:hover{
+#sidebar-left li a:hover , #sidebar-right li a:hover {
 	color: #000;
 }
-#sidebar-left li{
+#sidebar-left li, #sidebar-right li {
 	border-bottom: 1px solid #EFEFEF;
+}
+#sidebar-left li:hover, #sidebar-right li:hover {
+	border-bottom-color: #99cccc ;
 }
 
 /* =Structure
@@ -556,11 +554,17 @@ a.more-link:hover {
 	padding: 0.7em;
 	width: 98.2%;
 }
+#primary-left {
+	float: left;
+	margin: 0 0 0 -27%;
+	padding: 0.7em;
+	width: 98.2%;
+}
 
 #content-right {
 	margin: 0 0 0 27%;
 }
-#sidebar-left {
+#sidebar-left, #sidebar-right {
 	background: #FFF;
    	float: left;
    	margin: 0.4em 0.2em 0.4em;
@@ -576,10 +580,10 @@ a.more-link:hover {
 .site-footer {
 	clear: both;
 	margin: 0 auto;
-	background-color: #222;
+	background-color: #333;
 }
 .footer_container {
-	background: #222;
+	background: #333;
 	margin: 0 auto;
 	max-width: 1160px;
 }
@@ -691,7 +695,7 @@ a.more-link:hover {
 	position: relative;
 	background-color: #FFF;
 }
-.main-navigation a {
+.main-navigation a, #header_searchform {
 	color: #666;
     display: block;
     font-size: 1.3rem;
@@ -703,6 +707,25 @@ a.more-link:hover {
 	padding: 0 18px;
 	border-top: 4px solid #FFF;
 	font-weight: 700;
+}
+#header_searchform input {
+	border-radius: 10px;
+    border: 1px solid #666;
+	width: 150px;
+}
+#header_searchform input:focus {
+    border: 2px solid #666;
+}
+#submit_header_search {
+	color: #666;
+    display: block;
+	font-size: 13px;
+	height: 90px;
+	line-height: 94px;
+	text-transform: uppercase;
+	border-top: 4px solid #FFF;
+	font-weight: 700;
+	cursor:pointer;
 }
 
 .main-navigation li:hover > a,
@@ -958,6 +981,10 @@ a.more-link:hover {
 	padding: 6px;
 	text-align: center;
 }
+.home .recent p{
+	height: 88px;
+    overflow: hidden;
+}
 .hentry {
     border-bottom: 1px solid #EFEFEF;
 	margin: 0 0 1.5em;
@@ -1093,6 +1120,10 @@ footer.entry-meta {
 .entry-summary {
 	margin: 0.8em 0 0;
 }
+.gridblock .entry-content {
+	height: 111px;
+    overflow: hidden;
+}
 .entry-content table,
 .comment-content table {
 	border: 1px solid #d9d9d9;
@@ -1121,7 +1152,7 @@ footer.entry-meta {
 }
 .entry-content ul li {
 	list-style-type: square;
-	list-style-position: inside;
+	list-style-position: outside;
 }
 .entry-content ol {
 	list-style: decimal;
@@ -1158,6 +1189,9 @@ footer.entry-meta {
 	border-radius: 0.2em;
 	padding: 4px 8px;
 	clear: both;
+	position: absolute;
+    right: 8px;
+    bottom: 8px;
 }
 .grid-more-link:hover{
 	background-color: #222;
@@ -1515,10 +1549,11 @@ p.nocomments {
 	font-family: Tahoma, Geneva, sans-serif;
 	color: #666;
 	font-size: 13px;
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 	padding: 2px 6px;
 	border-bottom: 4px solid #10b9b9;
 	text-transform: uppercase;
+	font-weight: bold;
 }
 
 /* Search widget */
@@ -1547,10 +1582,10 @@ p.nocomments {
 .site-info {
 	font-size: 13px;
 	font-size: 1.3rem;
-	padding: 2.2em 0;
+	padding: 0 0 1px 0;
 	text-align: center;
 	color: #808080;
-	background-color: #333;
+	background-color: #222;
 	border-top: 1px solid  #444;
 }
 .site-info a{
@@ -1636,10 +1671,26 @@ p.nocomments {
  */
 
 .featuretext_top {
-	padding: 80px 0;
-	margin: 0 0 20px 0;
-	background-color: #E7E7E7;
-	text-align: center;
+	padding: 40px 0;
+    margin: 0 0 20px 0;
+    background-color: #E7E7E7;
+    text-align: center;
+}
+
+.home_read_more {
+	color: #888888;
+	font-size: 15px;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #888888;
+	cursor:pointer;
+}
+.home_read_more:hover {
+	color: #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.featuretext_top  .featuretext_button{
+	display: inline;
 }
 
 .featuretext_top h3{
@@ -1648,9 +1699,9 @@ p.nocomments {
 	margin: 0;
 	text-align:center;
 	font-size:2.4rem;
-	font-size:24px;
-	text-shadow: 0px 3px 0 #CCC;
+	font-size:20px;
 	font-weight: 700;
+	display: inline;
 }
 
 .featuretext_top p{
@@ -1667,7 +1718,7 @@ p.nocomments {
 
 
 .featuretext_middle {
-	padding: 20px;
+	padding: 0px;
 	margin: 0;
 	background: #222 url(images/triangles.png);
 	border-top: 1px solid #10b9b9;
@@ -1857,10 +1908,10 @@ aside.testimonial {
     font-style: italic;
 	color: #CCC;
 }
-#sidebar-left .testimonial_widget .quote {
+#sidebar-left .testimonial_widget .quote, #sidebar-right .testimonial_widget .quote {
     color: #CCC;
 }
-#sidebar-left .testimonial_widget-text {
+#sidebar-left .testimonial_widget-text, #sidebar-right .testimonial_widget-text {
 	color: #333;
 }
 #secondary .testimonial_widget .quote,
@@ -1889,7 +1940,7 @@ color: #CCC;
 	position: relative;
 	top: 8px;
 	margin: 0 auto;
-	max-width: 110px;
+	max-width: 250px;
 	background: #FFF;
 	text-align: center;
 	line-height: 16px;
@@ -1987,13 +2038,16 @@ color: #CCC;
      width:28%;
      padding:1%;
      margin:1.25%;
-     min-height:190px;
+     /*min-height:190px;*/
 	 border: 2px solid #EFEFEF;
 	 border-radius: 0.4em;
+	 position: relative;
+	 padding-bottom: 39px;
 }
 .gridblock .hentry {
 	border-bottom: 0;
 	padding-bottom: 0;
+	height: 100%;
 }
 .gridblock .blog-image{
      padding-top: 0;
@@ -2148,7 +2202,7 @@ MEDIA QUERIES
 	#primary,
 	#secondary,
 	#tertiary,
-	#sidebar-left {
+	#sidebar-left,#sidebar-right {
 		background: none;
 		float: none;
 		margin: 0;
@@ -2157,20 +2211,16 @@ MEDIA QUERIES
 	#primary,
 	#secondary,
 	#tertiary,
-	#sidebar-left {
+	#sidebar-left,#sidebar-right {
 		width: 100%;
 	}
 	#content-right,
-	#primary-right {
+	#primary-right,#primary-left {
 		background: none;
 		float: none;
 		margin: 0;
 		padding: 0;
-	}
-	#primary-right{
 		width: 100%;
-	}
-	#primary-right {
 		border-top: 0;
 	}
 	.site-logo {
@@ -2216,6 +2266,9 @@ MEDIA QUERIES
 	}
 	.hentry {
 	border-bottom: none;
+	}
+	.gridblock .entry-content {
+		height: auto;
 	}
 }
 
@@ -2428,4 +2481,42 @@ MEDIA QUERIES
 	font-size:12px;
 	padding: 6px;
 	}
+}
+
+#centro_menu {
+    height: 60px;
+    background: #EFEFEF url(images/diagonal-noise.png);
+    margin-bottom: 10px;
+    border-bottom: 1px solid #E1E1E1;
+    border-top: 1px solid #E1E1E1;
+	border-radius: 10px;
+    overflow: hidden;
+}
+
+#centro_menu a {
+    width: 32.9%;
+    display: inline-block;
+    text-align: center;
+    line-height: 60px;
+	color: #666666;
+}
+#centro_menu a:hover{
+	    box-shadow: 0px 20px 34px #D8D8D8;
+		font-weight:bold;
+}
+/**/
+.green_btn {
+    background-color: #64BD03;
+    color: white !important;
+    padding: 14px 52px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #D6D6D6;
+    margin: 5px auto;
+    text-align: center;
+    display: inline-block;
+}
+.green_btn:hover {
+    background-color: #71D603;
 }

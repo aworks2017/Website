@@ -6,7 +6,7 @@ function formationpro_customizer_css() {
 
 ?>
 
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/<?php echo esc_attr(strtolower( jt_get_theme_mod( 'formationpro_color_scheme', 'red' ) ) ); ?>.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri();?>/css/<?php echo esc_attr(strtolower( jt_get_theme_mod( 'formationpro_color_scheme', 'red' ) ) ); ?>.css" type="text/css" media="screen">
 
 <?php
 
