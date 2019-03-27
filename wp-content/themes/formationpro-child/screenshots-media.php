@@ -48,6 +48,11 @@ add_action( 'wp_enqueue_scripts', function(){
 			<span id="span_advertiser"  style="color: red; display:none">Advertiser is required</span></td>
 		</tr>
 		<tr>
+			<td>JIRA Ticket Number:<span style="color: red;">*</span></td>
+			<td><input type="text" class="required_fields" name="jira_id" id="jira_id" style="margin-top: 5px; width: 330px;" >
+			<span id="span_jira_id"  style="color: red; display:none">JIRA Ticket Number is required</span></td>
+		</tr>
+		<tr>
 			<td>Creative ID(s):<span  style="color: red;">*</span></td>
 			<td><textarea class="required_fields" name="campaign_id"  id="campaign_id" style="width: 330px; margin: 0px; height: 45px;"></textarea>
 			<span id="span_campaign_id"  style="color: red; display:none">Creative ID is required</span></td>
