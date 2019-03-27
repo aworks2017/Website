@@ -28,6 +28,7 @@ if( isset( $_POST[ 'requester_email' ]) && !empty( $_POST[ 'requester_email' ]))
 	$template_html = str_replace('$additional_screenshot',$_POST['additional_screenshot'], $template_html);
 	$template_html = str_replace('$screenshot_due_date',$_POST['screenshot_due_date'], $template_html);
 	$template_html = str_replace('$advertiser', $_POST['advertiser'], $template_html);
+	$template_html = str_replace('$jira_id', $_POST['jira_id'], $template_html);
 	$template_html = str_replace('$campaign_id', stripslashes($_POST['campaign_id']), $template_html);
 	$template_html = str_replace('$site_publishers', $_POST['sites_publishers'], $template_html);
 	if($_POST['geo_target'] == 'Yes'){
